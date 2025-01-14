@@ -17,6 +17,7 @@
 		"@eslint/js": "^9.17.0",
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/adapter-vercel": "^5.5.2",
+		"@sveltejs/enhanced-img": "^0.4.4",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"autoprefixer": "^10.4.20",
@@ -38,7 +39,6 @@
 	"dependencies": {
 		"@tailwindcss/container-queries": "^0.1.1",
 		"@tailwindcss/typography": "^0.5.15",
-		"blurhash": "^2.0.5",
 		"pnpm": "^9.15.3"
 	}
 }

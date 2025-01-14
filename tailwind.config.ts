@@ -27,7 +27,7 @@ export default {
 				sans: ['Mulish', 'ui-sans-serif', 'system-ui']
 			},
 			backgroundImage: {
-				choir: "url('/img/cpc_konzert.webp')"
+				choir: "url('$lib/img/cpc_konzert_small.webp')"
 			},
 			gridTemplateColumns: {
 				konzerte: 'repeat(1, minmax(0, 1fr)) 50px'
