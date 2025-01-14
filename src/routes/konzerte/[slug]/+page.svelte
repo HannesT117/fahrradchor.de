@@ -13,11 +13,9 @@
 	<div class="flex flex-col gap-4">
 		<CpcH2 tag="h1">{meta.title}</CpcH2>
 		<p>{meta.date}</p>
-		<div class="all-prose">
-			{#if MDComponent}
-				<MDComponent />
-			{/if}
-		</div>
+		{#if MDComponent}
+			<MDComponent />
+		{/if}
 		<div>
 			<h2>Ort</h2>
 			<strong>{meta.venue}</strong><br />
