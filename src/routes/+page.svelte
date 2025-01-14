@@ -15,7 +15,9 @@
 <div class="-mt-20 mb-8 h-screen w-full bg-choir bg-cover bg-center">
 	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
 		<h1 class="mb-4 text-6xl font-bold text-cpc-500">Collegium Pedale Cantorum</h1>
-		<CpcButtonLink href="/konzerte/test">Zu unserem Winterkonzert am 1. Februar 2025</CpcButtonLink>
+		<CpcButtonLink href="/konzerte/biesenthal-2025"
+			>Zu unserem Winterkonzert am 1. Februar 2025</CpcButtonLink
+		>
 	</div>
 </div>
 
