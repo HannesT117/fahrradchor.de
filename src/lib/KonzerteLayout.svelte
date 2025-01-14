@@ -4,11 +4,11 @@
 	const { children, title } = $props();
 </script>
 
-<div class="px-4 md:px-0">
+<article>
 	{#if title}
 		<CpcH2 tag="h1" align="left">{title}</CpcH2>
 	{/if}
-	<article class="prose">
+	<div class="prose">
 		{@render children()}
-	</article>
-</div>
+	</div>
+</article>

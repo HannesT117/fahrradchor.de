@@ -6,6 +6,7 @@ venue: Evangelische Stadtkirche Biesenthal
 street: Kirchgasse
 plz: 16359
 place: Biesenthal
+layout: konzert
 ---
 
 ## Musik machen, Radfahren und Gutes tun

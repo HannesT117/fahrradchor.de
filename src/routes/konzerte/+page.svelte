@@ -20,18 +20,16 @@
 			<h2 class="mb-4 text-lg font-semibold text-gray-900">Bevorstehende Konzerte</h2>
 			<ul>
 				{#each data.futureKonzerte as konzert}
-					<a
-						href="konzerte/{konzert.slug}"
-						class="border-gray-200 [&:not(:last-child)>*]:border-b-2"
-					>
-						<li class="grid grid-cols-konzerte items-center gap-8 py-4">
-							<div>
-								<div class="text-sm text-gray-500">{konzert.time}</div>
-								<div>{konzert.place}</div>
-							</div>
+					<li class="gap-8 hover:bg-cpc-100">
+						<a
+							href="konzerte/{konzert.slug}"
+							class="flex justify-between border-gray-200 p-4 [&:not(:last-child)>*]:border-b-2"
+						>
+							<div class="text-sm text-gray-500">{konzert.time}</div>
+							<div>{konzert.place}</div>
 							<ArrowRight />
-						</li>
-					</a>
+						</a>
+					</li>
 				{/each}
 			</ul>
 		</div>

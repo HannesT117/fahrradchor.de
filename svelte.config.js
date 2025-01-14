@@ -10,6 +10,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md', '.svx'],
 			layout: {
+				konzert: 'src/lib/KonzerteLayout.svelte',
 				_: 'src/lib/MarkdownLayout.svelte'
 			}
 		}),

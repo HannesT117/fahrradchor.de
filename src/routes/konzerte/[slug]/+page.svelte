@@ -13,13 +13,13 @@
 	<title>{meta.title}</title>
 </svelte:head>
 
-<article class="flex flex-grow flex-col">
+<div class="flex flex-grow flex-col px-4 md:px-0">
 	<div class="flex flex-col gap-4">
 		<p>{meta.date}</p>
 		{#if MDComponent}
 			<MDComponent />
 		{/if}
-		<div>
+		<div class="prose">
 			<h2>Ort</h2>
 			<strong>{meta.venue}</strong><br />
 			<span>{meta.street}</span><br />
@@ -30,4 +30,4 @@
 			{meta.entry || 'Eintritt frei - Spenden erbeten'}
 		</div>
 	</div>
-</article>
+</div>
