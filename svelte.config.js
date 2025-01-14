@@ -22,7 +22,17 @@ const config = {
 		adapter: adapter({
 			runtime: 'nodejs22.x',
 			regions: ['fra1']
-		})
+		}),
+		csp: {
+			directives: {
+				'script-src': ['self']
+			},
+			reportOnly: {
+				'script-src': ['self'],
+				'report-uri': ['/']
+			},
+			mode: 'auto'
+		}
 	},
 
 	extensions: ['.svelte', '.svx', '.md']
