@@ -4,6 +4,11 @@
 	import CpcParagraph from '$lib/components/CpcParagraph.svelte';
 </script>
 
+<svelte:head>
+	<title>Collegium Pedale Cantorum - Der Fahrradchor</title>
+	<meta name="description" content="Collegium Pedale Cantorum: Ein Fahrradchor mit vier- bis achtstimmiger Musik von Renaissance bis Jazz, unterwegs vor allem in Brandenburg, Mecklenburg-Vorpommern und Sachsen-Anhalt.">
+</svelte:head>
+
 <div class="-mt-20 mb-8 h-screen w-full bg-choir bg-cover bg-center">
 	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
 		<h1 class="mb-4 text-6xl font-bold text-cpc-500">Collegium Pedale Cantorum</h1>

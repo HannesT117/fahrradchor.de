@@ -9,6 +9,10 @@
 	const { MDComponent, meta } = data;
 </script>
 
+<svelte:head>
+	<title>{meta.title}</title>
+</svelte:head>
+
 <article class="flex flex-grow flex-col">
 	<div class="flex flex-col gap-4">
 		<CpcH2 tag="h1">{meta.title}</CpcH2>

@@ -7,8 +7,11 @@ import ArrowRight from '$lib/components/icons/ArrowRight.svelte';
 		data: PageData;
 	}
 	const { data }: Props = $props();
-	// console.log(data.konzerte);
 </script>
+
+<svelte:head>
+	<title>Konzerte des Collegium Pedale Cantorum</title>
+</svelte:head>
 
 <CpcH2 tag="h1">Konzerte</CpcH2>
 <div class="flex flex-col w-full md:w-2/3 lg:w-1/2 justify-center gap-8">

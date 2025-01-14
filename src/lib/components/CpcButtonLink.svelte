@@ -1,9 +1,11 @@
 <script lang="ts">
-    type Props = {
-        href: string;
-    }
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-    const { href }: Props = $props();
+	const { children, ...rest }: HTMLAnchorAttributes = $props();
 </script>
 
-<a href={href} class="block w-fit rounded bg-cpc-500 mt-4 py-2 px-4 text-gray-700 hover:bg-cpc-900 hover:text-gray-100"><slot /></a>
+<a
+	{...rest}
+	class="mt-4 block w-fit rounded bg-cpc-500 px-4 py-2 text-gray-700 hover:bg-cpc-900 hover:text-gray-100"
+	>{@render children?.()}</a
+>
