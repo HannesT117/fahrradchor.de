@@ -6,7 +6,10 @@
 
 <svelte:head>
 	<title>Collegium Pedale Cantorum - Der Fahrradchor</title>
-	<meta name="description" content="Collegium Pedale Cantorum: Ein Fahrradchor mit vier- bis achtstimmiger Musik von Renaissance bis Jazz, unterwegs vor allem in Brandenburg, Mecklenburg-Vorpommern und Sachsen-Anhalt.">
+	<meta
+		name="description"
+		content="Collegium Pedale Cantorum: Ein Fahrradchor mit vier- bis achtstimmiger Musik von Renaissance bis Jazz, unterwegs vor allem in Brandenburg, Mecklenburg-Vorpommern und Sachsen-Anhalt."
+	/>
 </svelte:head>
 
 <div class="-mt-20 mb-8 h-screen w-full bg-choir bg-cover bg-center">
@@ -52,7 +55,7 @@
 				alt="Friedemann Lessing beim Dirigieren"
 			/>
 			<div
-				class="rounded mt-4 md:mt-0 md:absolute md:bottom-1/4 md:ml-[40%] md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
+				class="mt-4 rounded md:absolute md:bottom-1/4 md:ml-[40%] md:mt-0 md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
 			>
 				<CpcParagraph>
 					Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und

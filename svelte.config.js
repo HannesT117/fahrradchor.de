@@ -6,12 +6,15 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	preprocess: [mdsvex({
-		extensions: ['.md', '.svx'],
-		layout: {
-			_: 'src/lib/MarkdownLayout.svelte'
-		}
-	}), vitePreprocess()],
+	preprocess: [
+		mdsvex({
+			extensions: ['.md', '.svx'],
+			layout: {
+				_: 'src/lib/MarkdownLayout.svelte'
+			}
+		}),
+		vitePreprocess()
+	],
 	kit: {
 		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
 		// If your environment is not supported, or you settled on a specific environment, switch out the adapter.

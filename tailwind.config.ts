@@ -24,7 +24,7 @@ export default {
 				}
 			},
 			fontFamily: {
-				'sans': ['Mulish', 'ui-sans-serif', 'system-ui']
+				sans: ['Mulish', 'ui-sans-serif', 'system-ui']
 			},
 			backgroundImage: {
 				choir: "url('/img/cpc_konzert.webp')"
