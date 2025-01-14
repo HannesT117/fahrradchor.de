@@ -16,7 +16,7 @@
 	<div>
 		<img
 			class="rounded-sm object-contain md:float-right md:ml-8 md:w-2/5"
-			src="/img/tents.jpeg"
+			src="/img/tents.webp"
 			alt="Eine Wiese voll Zelten mit der Sonne im Hintergrund"
 		/>
 		<CpcParagraph>
@@ -43,7 +43,7 @@
 		<div class="relative">
 			<img
 				class="rounded object-cover md:h-80 md:w-1/2"
-				src="/img/friedemann.jpg"
+				src="/img/friedemann.webp"
 				alt="Friedemann Lessing beim Dirigieren"
 			/>
 			<div
@@ -66,7 +66,7 @@
 				<div class="md:float-right md:max-w-96 md:overflow-hidden">
 					<img
 						class="max-h-full rounded md:h-full md:min-h-full md:min-w-full md:object-cover md:object-right"
-						src="/img/seb.jpg"
+						src="/img/seb.webp"
 						alt="Ein Fahrrad fahrendes CPC-Mitglied auf einem ländlichen Radweg von hinten"
 					/>
 				</div>
