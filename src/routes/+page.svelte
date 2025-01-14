@@ -73,12 +73,12 @@
 			<div class="gap-6 md:flex md:flex-row-reverse">
 				<div class="md:float-right md:max-w-96 md:overflow-hidden">
 					<img
-						class="max-h-full rounded md:h-full md:min-h-full md:min-w-full md:object-cover md:object-right"
+						class="max-h-full min-w-full rounded md:min-h-full md:object-cover md:object-right"
 						src="/img/seb.webp"
 						alt="Ein Fahrrad fahrendes CPC-Mitglied auf einem ländlichen Radweg von hinten"
 					/>
 				</div>
-				<div class="mt-4 grid-flow-row grid-cols-2 gap-4 md:grid">
+				<div class="mt-4 h-fit grid-flow-row grid-cols-2 gap-4 md:flex-1 lg:grid">
 					<div>
 						<h4 class="mb-2 text-xl">Die Route</h4>
 						<CpcParagraph>
