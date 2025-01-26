@@ -2,15 +2,15 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	type Props = HTMLAttributes<HTMLHeadingElement> & {
 		tag?: 'h1' | 'h2' | 'h3';
-		align?: 'center' | 'left'
+		align?: 'center' | 'left';
 	};
 
 	let { children, tag = 'h2', align = 'center', ...rest }: Props = $props();
 </script>
 
 <svelte:element
-	{...rest}
 	this={tag}
+	{...rest}
 	class="mb-8 text-{align} text-3xl font-extralight text-cpc-900 md:text-4xl lg:text-5xl"
 >
 	{@render children?.()}

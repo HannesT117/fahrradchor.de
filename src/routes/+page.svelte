@@ -14,7 +14,7 @@
 		name="description"
 		content="Collegium Pedale Cantorum: Ein Fahrradchor mit vier- bis achtstimmiger Musik von Renaissance bis Jazz, unterwegs vor allem in Brandenburg, Mecklenburg-Vorpommern und Sachsen-Anhalt."
 	/>
-	<link rel="preload" fetchpriority="high" as="image" href={BgImage} type="image/webp">
+	<link rel="preload" fetchpriority="high" as="image" href={BgImage} type="image/webp" />
 </svelte:head>
 
 <div class="-mt-20 mb-8 h-[88vh] w-full bg-choir bg-cover bg-center">

@@ -25,7 +25,7 @@
 					>
 						<a
 							href="konzerte/{konzert.slug}"
-							class="grid grid-cols-[1fr_1fr_auto] items-center gap-4 py-4 md:p-4"
+							class="grid grid-cols-[2fr_1fr_auto] items-center gap-4 py-4 md:p-4"
 						>
 							<span class="font-light text-gray-500">{konzert.time}</span>
 							<span>{konzert.place}</span>
@@ -46,7 +46,7 @@
 					>
 						<a
 							href="konzerte/{konzert.slug}"
-							class="grid grid-cols-[1fr_1fr_auto] items-center gap-4 py-4 md:p-4"
+							class="grid grid-cols-[2fr_1fr_auto] items-center gap-4 py-4 md:p-4"
 						>
 							<span class="font-light text-gray-500">{konzert.time}</span>
 							<span>{konzert.place}</span>
