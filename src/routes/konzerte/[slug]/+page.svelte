@@ -15,7 +15,7 @@
 
 <div class="flex flex-grow flex-col px-4 md:px-0">
 	<div class="flex flex-col gap-4">
-		<p>{meta.date}</p>
+		<p>{meta.time}</p>
 		{#if MDComponent}
 			<MDComponent />
 		{/if}
