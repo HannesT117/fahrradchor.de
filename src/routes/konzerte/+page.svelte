@@ -16,17 +16,19 @@
 <CpcH2 tag="h1">Konzerte</CpcH2>
 <div class="flex w-full flex-col justify-center gap-8 md:w-2/3 lg:w-1/2">
 	{#if data.futureKonzerte.length}
-		<div class="w-full gap-6 rounded-lg bg-white p-6 md:shadow-md">
+		<div class="w-full gap-6 rounded-lg bg-white p-2 md:p-6 md:shadow-md">
 			<h2 class="mb-4 text-lg font-semibold text-gray-900">Bevorstehende Konzerte</h2>
 			<ul>
 				{#each data.futureKonzerte as konzert}
-					<li class="gap-8 hover:bg-cpc-100">
+					<li
+						class="border-solid border-gray-200 hover:bg-cpc-100 [&:not(:last-child)>*]:border-b-2"
+					>
 						<a
 							href="konzerte/{konzert.slug}"
-							class="flex justify-between border-gray-200 p-4 [&:not(:last-child)>*]:border-b-2"
+							class="grid grid-cols-[1fr_1fr_auto] items-center gap-4 py-4 md:p-4"
 						>
-							<div class="text-sm text-gray-500">{konzert.time}</div>
-							<div>{konzert.place}</div>
+							<span class="font-light text-gray-500">{konzert.time}</span>
+							<span>{konzert.place}</span>
 							<ArrowRight />
 						</a>
 					</li>
@@ -39,15 +41,18 @@
 			<h2 class="mb-4 text-lg font-semibold text-gray-900">Vergangene Konzerte</h2>
 			<ul>
 				{#each data.pastKonzerte as konzert}
-					<a href="konzerte/{konzert.slug}" class="[&:not(:last-child)>*]:border-b-2">
-						<li class="grid grid-cols-konzerte items-center gap-8 border-gray-200">
-							<div>
-								<div class="text-sm text-gray-500">{konzert.time}</div>
-								<div>{konzert.place}</div>
-							</div>
+					<li
+						class="border-solid border-gray-200 hover:bg-cpc-100 [&:not(:last-child)>*]:border-b-2"
+					>
+						<a
+							href="konzerte/{konzert.slug}"
+							class="grid grid-cols-[1fr_1fr_auto] items-center gap-4 py-4 md:p-4"
+						>
+							<span class="font-light text-gray-500">{konzert.time}</span>
+							<span>{konzert.place}</span>
 							<ArrowRight />
-						</li>
-					</a>
+						</a>
+					</li>
 				{/each}
 			</ul>
 		</div>
