@@ -1,7 +1,7 @@
 ---
 title: Winterkonzert in Biesenthal
-start: 2025-02-01T17:00:00
-end: 2025-02-01T18:15:00
+start: 2025-02-01T16:00:00
+end: 2025-02-01T17:15:00
 venue: Evangelische Stadtkirche Biesenthal
 street: Kirchgasse
 plz: 16359
