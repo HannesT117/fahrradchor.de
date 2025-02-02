@@ -78,7 +78,7 @@
 	<div>
 		<h3 class="mb-4 text-3xl">Die Konzertreise</h3>
 		<div>
-			<CpcParagraph>Mit neuem Programm geht es jedes Jahr durch Ostdeutschland.</CpcParagraph>
+			<CpcParagraph>Mit neuem Programm geht es jedes Jahr im Sommer auf Tour.</CpcParagraph>
 
 			<div class="gap-6 md:flex md:flex-row-reverse">
 				<div class="md:float-right md:max-w-96 md:overflow-hidden">
@@ -92,9 +92,9 @@
 					<div>
 						<h4 class="mb-2 text-xl">Die Route</h4>
 						<CpcParagraph>
-							Unsere Reise führt uns jedes Jahr durch verschiedene Regionen Ostdeutschlands. Der
-							Chor fährt die Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60
-							Kilometer pro Tag.
+							Unsere Reise führt uns durch verschiedene Regionen Ostdeutschlands. Der Chor fährt die
+							Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60 Kilometer pro
+							Tag.
 						</CpcParagraph>
 					</div>
 
