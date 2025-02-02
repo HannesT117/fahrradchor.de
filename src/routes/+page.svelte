@@ -1,12 +1,12 @@
 <script>
-	import CpcTimeRestricted from '$lib/components/CpcTimeRestricted.svelte';
 	import CpcButtonLink from '$lib/components/CpcButtonLink.svelte';
 	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import CpcParagraph from '$lib/components/CpcParagraph.svelte';
-	import TentsImage from '$lib/img/tents.webp?enhanced';
+	import CpcTimeRestricted from '$lib/components/CpcTimeRestricted.svelte';
+	import BgImage from '$lib/img/cpc_konzert_small.webp';
 	import FriedemannImage from '$lib/img/friedemann.webp?enhanced';
 	import SebImage from '$lib/img/seb.webp?enhanced';
-	import BgImage from '$lib/img/cpc_konzert_small.webp';
+	import TentsImage from '$lib/img/tents.webp?enhanced';
 </script>
 
 <svelte:head>
@@ -92,33 +92,39 @@
 					<div>
 						<h4 class="mb-2 text-xl">Die Route</h4>
 						<CpcParagraph>
-							2025 touren wir vom 27. Juli bis 02. August voraussichtlich in der Altmark – die
-							genauen Orte reichen wir nach. 2024 führte uns die Reise von Jänschwalde über
-							Storkow/Mark und andere bis nach Kolkwitz.
+							Unsere Reise führt uns jedes Jahr durch verschiedene Regionen Ostdeutschlands. Der
+							Chor fährt die Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60
+							Kilometer pro Tag.
 						</CpcParagraph>
 					</div>
 
 					<div>
 						<h4 class="mb-2 text-xl">Das Programm</h4>
 						<CpcParagraph>
-							Im Gepäck haben wir ein jährlich angepasstes Programm, unter anderem mit Motetten von
-							Heinrich Schütz, Henry Purcell, Albert Becker, Ola Gjeilo, Melissa Dunphy, Burkhart M.
-							Schürmann sowie alten und neuen Volksliedsätzen.
+							Jedes Jahr im Frühjahr trifft sich der Chor, über das Sommerprogramm abzustimmen. Auf
+							unserer Tour singen wir ein buntes Programm, von Altmeistern der Rennaisance über
+							Volkslieder und Gospels bis hin zu Popsongs.
 						</CpcParagraph>
 					</div>
 
 					<div>
 						<h4 class="mb-2 text-xl">Der Rahmen</h4>
 						<CpcParagraph>
-							Der Eintritt zu den Konzerten ist frei. Am Ausgang wird um eine Spende für German
-							Doctors gebeten.
+							Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
+							Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck bitten
+							wir am Ende des Konzerts um eine Spende für <a
+								class="text-cpc-700 hover:text-cpcAnalog-300 hover:underline"
+								target="_blank"
+								href="https://www.german-doctors.de/">German Doctors</a
+							>.
 						</CpcParagraph>
 					</div>
 
 					<div>
 						<h4 class="mb-2 text-xl">Die Termine</h4>
 						<CpcParagraph
-							>Die einzelnen Daten der Konzerte sind in unserem Kalender zu finden.</CpcParagraph
+							>2025 touren wir vom 26. Juli bis 2. August in der Altmark. Die einzelnen Daten der
+							Konzerte sind in unserem Kalender zu finden.</CpcParagraph
 						>
 						<CpcButtonLink href="/konzerte">Zum Kalender</CpcButtonLink>
 					</div>
