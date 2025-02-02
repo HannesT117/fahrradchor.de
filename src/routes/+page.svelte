@@ -1,4 +1,5 @@
 <script>
+	import CpcTimeRestricted from '$lib/components/CpcTimeRestricted.svelte';
 	import CpcButtonLink from '$lib/components/CpcButtonLink.svelte';
 	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import CpcParagraph from '$lib/components/CpcParagraph.svelte';
@@ -20,11 +21,11 @@
 <div class="-mt-20 mb-8 h-[88vh] w-full bg-choir bg-cover bg-center">
 	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
 		<h1 class="mb-4 text-6xl font-bold text-cpc-500">Collegium Pedale Cantorum</h1>
-		{#if new Date() < new Date('2025-02-02')}
-		<CpcButtonLink href="/konzerte/biesenthal-2025"
+		<CpcTimeRestricted before="{new Date('2025-02-02')}">
+			<CpcButtonLink href="/konzerte/biesenthal-2025"
 		>Zu unserem Winterkonzert am 1. Februar 2025</CpcButtonLink
 	>
-		{/if}
+		</CpcTimeRestricted>
 	</div>
 </div>
 
