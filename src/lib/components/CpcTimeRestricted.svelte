@@ -1,15 +1,15 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type Props =  {
+	type Props = {
 		before?: Date;
 		after?: Date;
-		children: Snippet
-	}
+		children: Snippet;
+	};
 
 	const { children, before, after }: Props = $props();
 	const now = new Date();
-	const showBefore = !before || now < before
+	const showBefore = !before || now < before;
 	const showAfter = !after || now > after;
 	const show = showBefore && showAfter;
 </script>

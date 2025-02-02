@@ -1,7 +1,6 @@
 import { createTimeString } from '$lib/time';
 import type { PageLoad } from './$types';
 
-export const prerender = true;
 const files = import.meta.glob('$lib/konzerte/*.{md,svx,svelte.md}');
 const konzerte = new Map(Object.entries(files));
 

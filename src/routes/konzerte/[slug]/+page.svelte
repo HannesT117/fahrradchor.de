@@ -1,5 +1,4 @@
 <script lang="ts">
-	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import type { PageData } from './$types';
 
 	interface Props {

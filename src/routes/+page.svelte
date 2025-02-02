@@ -21,10 +21,10 @@
 <div class="-mt-20 mb-8 h-[88vh] w-full bg-choir bg-cover bg-center">
 	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
 		<h1 class="mb-4 text-6xl font-bold text-cpc-500">Collegium Pedale Cantorum</h1>
-		<CpcTimeRestricted before="{new Date('2025-02-02')}">
+		<CpcTimeRestricted before={new Date('2025-02-02')}>
 			<CpcButtonLink href="/konzerte/biesenthal-2025"
-		>Zu unserem Winterkonzert am 1. Februar 2025</CpcButtonLink
-	>
+				>Zu unserem Winterkonzert am 1. Februar 2025</CpcButtonLink
+			>
 		</CpcTimeRestricted>
 	</div>
 </div>
