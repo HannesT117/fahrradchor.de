@@ -18,9 +18,9 @@
 	<link rel="preload" fetchpriority="high" as="image" href={BgImage} type="image/webp" />
 </svelte:head>
 
-<div class="-mt-20 mb-8 h-[88vh] w-full bg-choir bg-cover bg-center">
+<div class="bg-choir -mt-20 mb-8 h-[88vh] w-full bg-cover bg-center">
 	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
-		<h1 class="mb-4 text-6xl font-bold text-cpc-500">Collegium Pedale Cantorum</h1>
+		<h1 class="text-cpc-500 mb-4 text-6xl font-bold">Collegium Pedale Cantorum</h1>
 		<CpcTimeRestricted before={new Date('2025-02-02')}>
 			<CpcButtonLink href="/konzerte/biesenthal-2025"
 				>Zu unserem Winterkonzert am 1. Februar 2025</CpcButtonLink
@@ -65,7 +65,7 @@
 				alt="Friedemann Lessing beim Dirigieren"
 			/>
 			<div
-				class="mt-4 rounded-sm md:absolute md:bottom-1/4 md:ml-[40%] md:mt-0 md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
+				class="mt-4 rounded-sm md:absolute md:bottom-1/4 md:mt-0 md:ml-[40%] md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
 			>
 				<CpcParagraph>
 					Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und
@@ -113,7 +113,7 @@
 							Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
 							Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck bitten
 							wir am Ende des Konzerts um eine Spende für <a
-								class="text-cpc-700 hover:text-cpcAnalog-300 hover:underline"
+								class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
 								target="_blank"
 								href="https://www.german-doctors.de/">German Doctors</a
 							>.
