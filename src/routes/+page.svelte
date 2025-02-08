@@ -33,7 +33,7 @@
 	<CpcH2>Der Fahrradchor mit vielseitigem Programm</CpcH2>
 	<div>
 		<enhanced:img
-			class="rounded-sm object-contain md:float-right md:ml-8 md:w-2/5"
+			class="rounded-xs object-contain md:float-right md:ml-8 md:w-2/5"
 			src={TentsImage}
 			alt="Eine Wiese voll Zelten mit der Sonne im Hintergrund"
 		/>
@@ -60,12 +60,12 @@
 		<h3 class="mb-4 text-3xl">Der Dirigent</h3>
 		<div class="relative">
 			<enhanced:img
-				class="rounded object-cover md:h-80 md:w-1/2"
+				class="rounded-sm object-cover md:h-80 md:w-1/2"
 				src={FriedemannImage}
 				alt="Friedemann Lessing beim Dirigieren"
 			/>
 			<div
-				class="mt-4 rounded md:absolute md:bottom-1/4 md:ml-[40%] md:mt-0 md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
+				class="mt-4 rounded-sm md:absolute md:bottom-1/4 md:ml-[40%] md:mt-0 md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
 			>
 				<CpcParagraph>
 					Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und
@@ -83,7 +83,7 @@
 			<div class="gap-6 md:flex md:flex-row-reverse">
 				<div class="md:float-right md:max-w-96 md:overflow-hidden">
 					<enhanced:img
-						class="max-h-full min-w-full rounded md:min-h-full md:object-cover md:object-right"
+						class="max-h-full min-w-full rounded-sm md:min-h-full md:object-cover md:object-right"
 						src={SebImage}
 						alt="Ein Fahrrad fahrendes CPC-Mitglied auf einem ländlichen Radweg von hinten"
 					/>
