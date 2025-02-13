@@ -2,7 +2,6 @@
 	import CpcButtonLink from '$lib/components/CpcButtonLink.svelte';
 	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import CpcParagraph from '$lib/components/CpcParagraph.svelte';
-	import CpcTimeRestricted from '$lib/components/CpcTimeRestricted.svelte';
 	import BgImage from '$lib/img/cpc_konzert_small.webp';
 	import FriedemannImage from '$lib/img/friedemann.webp?enhanced';
 	import SebImage from '$lib/img/seb.webp?enhanced';
@@ -21,11 +20,7 @@
 <div class="bg-choir -mt-20 mb-8 h-[88vh] w-full bg-cover bg-center">
 	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
 		<h1 class="text-cpc-500 mb-4 text-6xl font-bold">Collegium Pedale Cantorum</h1>
-		<CpcTimeRestricted before={new Date('2025-02-02')}>
-			<CpcButtonLink href="/konzerte/biesenthal-2025"
-				>Zu unserem Winterkonzert am 1. Februar 2025</CpcButtonLink
-			>
-		</CpcTimeRestricted>
+		<CpcButtonLink href="/konzerte/">Unsere Konzerte 2025</CpcButtonLink>
 	</div>
 </div>
 

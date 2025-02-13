@@ -1,10 +1,10 @@
 ---
 title: 3. Konzert der Sommertour
-start: 2025-07-30T19:00
-end: 2025-07-30T20:15
-venue:
-street:
-plz:
+start: 2025-07-30T19:30
+end: 2025-07-30T20:45
+venue: Stadtkirche St. Georg
+street: Kirchplatz 2
+plz: 39596
 place: Arneburg
 layout: konzert
 ---

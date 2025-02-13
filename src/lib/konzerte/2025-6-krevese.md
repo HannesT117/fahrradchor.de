@@ -1,10 +1,10 @@
 ---
 title: 6. Konzert der Sommertour
-start: 2025-08-01T19:00
-end: 2025-08-01T20:15
-venue:
-street:
-plz:
+start: 2025-08-01T20:00
+end: 2025-08-01T21:15
+venue: Klosterkirche
+street: Gutshof 12
+plz: 39606
 place: Osterburg-Krevese
 layout: konzert
 ---

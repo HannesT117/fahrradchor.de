@@ -1,10 +1,10 @@
 ---
 title: 1. Konzert der Sommertour
-start: 2025-07-28T19:00
-end: 2025-07-28T20:15
-venue:
-street:
-plz:
+start: 2025-07-28T19:30
+end: 2025-07-28T20:45
+venue: Nikolaikirche
+street: Schulhof 5
+plz: 39615
 place: Seehausen-Beuster
 layout: konzert
 ---

@@ -1,10 +1,10 @@
 ---
 title: 5. Konzert der Sommertour
-start: 2025-07-31T19:00
-end: 2025-07-31T20:15
-venue:
-street:
-plz:
+start: 2025-07-31T19:30
+end: 2025-07-31T20:45
+venue: Stadtkirche
+street: Breite Straße 11
+plz: 39629
 place: Bismark (Altmark)
 layout: konzert
 ---

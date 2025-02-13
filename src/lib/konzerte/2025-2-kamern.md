@@ -1,10 +1,10 @@
 ---
 title: 2. Konzert der Sommertour
-start: 2025-07-29T19:00
-end: 2025-07-29T20:15
-venue:
-street:
-plz:
+start: 2025-07-29T19:30
+end: 2025-07-29T20:45
+venue: Dorfkirche
+street: Dorfstraße 25
+plz: 39524
 place: Kamern
 layout: konzert
 ---
