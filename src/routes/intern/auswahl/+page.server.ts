@@ -27,7 +27,7 @@ export const actions = {
 			}
 
 			const pieces = formData.entries();
-			pieces.forEach(([piece, value]) => {
+			[...pieces].forEach(([piece, value]) => {
 				results.pieces[piece] = +(results.pieces[piece] ?? 0) + +value;
 			});
 			results['people'].push(name);
