@@ -6,6 +6,10 @@
 		form: ActionData;
 	}
 	const { data, form }: Props = $props();
+
+	if (form?.error) {
+		console.error(form.error);
+	}
 </script>
 
 <form method="POST" class="flex flex-col gap-5">

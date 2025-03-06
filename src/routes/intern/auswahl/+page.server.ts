@@ -39,7 +39,7 @@ export const actions = {
 				token: BLOB_READ_WRITE_TOKEN
 			});
 		} catch (e: any) {
-			return fail(500, e);
+			return fail(500, { error: e.message });
 		}
 
 		return redirect(302, '/intern/done');
