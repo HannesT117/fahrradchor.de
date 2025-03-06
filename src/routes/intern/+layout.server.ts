@@ -8,5 +8,5 @@ export const load: ServerLoad = async ({ cookies, url }) => {
 		redirect(307, '/');
 	}
 
-	cookies.set('token', INTERNAL_TOKEN, { path: url.host });
+	cookies.set('token', INTERNAL_TOKEN, { path: '/intern' });
 };
