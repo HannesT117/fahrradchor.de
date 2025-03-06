@@ -15,6 +15,8 @@
 
 <CpcH2>Voting Lieder 2024</CpcH2>
 
+Diese Lieder will ich wieder singen
+
 <form method="POST" class="flex flex-col">
 	<div class="group relative m-4 w-full">
 		<input
@@ -30,6 +32,7 @@
 			>Dein Name</label
 		>
 	</div>
+
 	{#each data.pieces as piece}
 		<fieldset
 			class="flex flex-col-reverse items-center gap-3 border-solid border-gray-200 p-4 md:flex-row md:items-baseline [&:not(:last-child)]:border-b-1"
