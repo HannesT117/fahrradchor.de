@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { ActionData, PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
 
 	interface Props {
 		data: PageData;
-        form: ActionData
+		form: ActionData;
 	}
 	const { data, form }: Props = $props();
 </script>

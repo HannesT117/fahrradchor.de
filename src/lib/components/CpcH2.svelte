@@ -11,7 +11,7 @@
 <svelte:element
 	this={tag}
 	{...rest}
-	class="mb-8 text-{align} text-3xl font-extralight text-cpc-900 md:text-4xl lg:text-5xl"
+	class="mb-8 text-{align} text-cpc-900 text-3xl font-extralight md:text-4xl lg:text-5xl"
 >
 	{@render children?.()}
 </svelte:element>

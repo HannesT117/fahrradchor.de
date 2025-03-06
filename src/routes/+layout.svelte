@@ -10,7 +10,7 @@
 </svelte:head>
 
 <nav
-	class="supports-backdrop-blur:bg-white/60 sticky top-0 z-40 flex h-14 w-full items-center justify-between bg-white/70 px-6 py-1 backdrop-blur-sm transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10"
+	class="sticky top-0 z-40 flex h-14 w-full items-center justify-between bg-white/70 px-6 py-1 backdrop-blur-sm transition-colors duration-500 supports-backdrop-blur:bg-white/60 lg:z-50 lg:border-b lg:border-slate-900/10"
 >
 	<a href="/" class="h-full" aria-label="Zur Startseite">
 		<!-- svelte-ignore a11y_missing_attribute -->

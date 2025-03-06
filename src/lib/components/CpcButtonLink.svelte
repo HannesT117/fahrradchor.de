@@ -6,6 +6,6 @@
 
 <a
 	{...rest}
-	class="mt-4 block w-fit rounded-sm bg-cpc-500 px-4 py-2 text-gray-700 hover:bg-cpc-900 hover:text-gray-100"
+	class="bg-cpc-500 hover:bg-cpc-900 mt-4 block w-fit rounded-sm px-4 py-2 text-gray-700 hover:text-gray-100"
 	>{@render children?.()}</a
 >
