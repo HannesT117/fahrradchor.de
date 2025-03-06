@@ -28,8 +28,6 @@ export const actions = {
 
 			const pieces = formData.entries();
 			pieces.forEach(([piece, value]) => {
-				console.log(piece, value);
-				console.log(`${value} + ${+(results.pieces[piece] ?? 0)}`);
 				results.pieces[piece] = +(results.pieces[piece] ?? 0) + +value;
 			});
 			results['people'].push(name);
