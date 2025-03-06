@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import type { ActionData, PageData } from './$types';
 
 	interface Props {
@@ -12,40 +13,10 @@
 	}
 </script>
 
-<form method="POST" class="flex flex-col gap-5">
-	{#each data.pieces as piece}
-		<fieldset class="flex items-center gap-3">
-			<label class="flex flex-col items-center"
-				><input
-					name={piece}
-					type="radio"
-					value="1"
-					class="focus:ring-cpc-300 dark:focus:ring-cpc-300 h-4 w-4 border-gray-300 focus:ring-2"
-				/>
-				ja</label
-			>
-			<label class="flex flex-col items-center"
-				><input
-					name={piece}
-					type="radio"
-					value="0"
-					class="focus:ring-cpc-300 dark:focus:ring-cpc-300 h-4 w-4 border-gray-300 focus:ring-2"
-				/>
-				neutral</label
-			>
-			<label class="flex flex-col items-center"
-				><input
-					name={piece}
-					type="radio"
-					value="-1"
-					class="focus:ring-cpc-300 dark:focus:ring-cpc-300 h-4 w-4 border-gray-300 focus:ring-2"
-				/>
-				nein</label
-			>
-			<span>{piece}</span>
-		</fieldset>
-	{/each}
-	<div class="group relative z-0 mb-5 w-full">
+<CpcH2>Voting Lieder 2024</CpcH2>
+
+<form method="POST" class="flex flex-col">
+	<div class="group relative m-4 w-full">
 		<input
 			type="name"
 			name="name"
@@ -59,6 +30,42 @@
 			>Dein Name</label
 		>
 	</div>
+	{#each data.pieces as piece}
+		<fieldset
+			class="flex flex-col-reverse items-center gap-3 border-solid border-gray-200 p-4 md:flex-row md:items-baseline [&:not(:last-child)]:border-b-1"
+		>
+			<div class="flex gap-3">
+				<label class="flex flex-col items-center"
+					><input
+						name={piece}
+						type="radio"
+						value="1"
+						class="focus:ring-cpc-300 dark:focus:ring-cpc-300 h-4 w-4 border-gray-300 focus:ring-2"
+					/>
+					ja</label
+				>
+				<label class="flex flex-col items-center"
+					><input
+						name={piece}
+						type="radio"
+						value="0"
+						class="focus:ring-cpc-300 dark:focus:ring-cpc-300 h-4 w-4 border-gray-300 focus:ring-2"
+					/>
+					neutral</label
+				>
+				<label class="flex flex-col items-center"
+					><input
+						name={piece}
+						type="radio"
+						value="-1"
+						class="focus:ring-cpc-300 dark:focus:ring-cpc-300 h-4 w-4 border-gray-300 focus:ring-2"
+					/>
+					nein</label
+				>
+			</div>
+			<span>{piece}</span>
+		</fieldset>
+	{/each}
 	{#if form?.duplicate}<p class="text-red-700">
 			Unter diesem Namen hat leider schon eine Person teilgenommen.
 		</p>{/if}
