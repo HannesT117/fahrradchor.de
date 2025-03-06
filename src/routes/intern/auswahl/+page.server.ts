@@ -42,6 +42,6 @@ export const actions = {
 			return fail(500, e);
 		}
 
-		return redirect(303, '/intern/done');
+		return redirect(302, '/intern/done');
 	}
 } satisfies Actions;
