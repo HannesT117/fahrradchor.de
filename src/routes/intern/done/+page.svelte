@@ -13,6 +13,7 @@
 	<h2 class="text-cpc-900 text-center text-3xl font-extralight md:text-4xl lg:text-5xl">
 		Aktuelle Stimmen
 	</h2>
+	<p>Bisher haben <strong>{data.numberOfParticipants} Personen</strong> abgestimmt.</p>
 	<ul>
 		{#each data.pieces as piece}
 			<li>{piece[0]}: {piece[1]}</li>
