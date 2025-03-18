@@ -1,7 +1,7 @@
 ---
 title: 6. Konzert der Sommertour
-start: 2025-08-01T20:00
-end: 2025-08-01T21:15
+start: 2025-08-02T20:00
+end: 2025-08-02T21:15
 venue: Klosterkirche
 street: Gutshof 12
 plz: 39606
