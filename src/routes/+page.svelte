@@ -20,7 +20,6 @@
 <div class="bg-choir -mt-20 mb-8 h-[88vh] w-full bg-cover bg-center">
 	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
 		<h1 class="text-cpc-500 mb-4 text-6xl font-bold">Collegium Pedale Cantorum</h1>
-		<CpcButtonLink href="/konzerte/">Unsere Konzerte 2025</CpcButtonLink>
 	</div>
 </div>
 
@@ -118,7 +117,7 @@
 					<div>
 						<h4 class="mb-2 text-xl">Die Termine</h4>
 						<CpcParagraph
-							>2025 touren wir vom 26. Juli bis 2. August in der Altmark. Die einzelnen Daten der
+							>2025 tourten wir vom 26. Juli bis 2. August in der Altmark. Die einzelnen Daten der
 							Konzerte sind in unserem Kalender zu finden.</CpcParagraph
 						>
 						<CpcButtonLink href="/konzerte">Zum Kalender</CpcButtonLink>
