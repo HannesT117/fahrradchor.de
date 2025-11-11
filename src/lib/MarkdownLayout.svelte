@@ -8,7 +8,7 @@
 	{#if title}
 		<CpcH2 tag="h1" align="left">{title}</CpcH2>
 	{/if}
-	<article class="prose">
+	<article class="prose dark:prose-invert">
 		{@render children()}
 	</article>
 </div>

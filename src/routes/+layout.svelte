@@ -10,7 +10,7 @@
 </svelte:head>
 
 <nav
-	class="sticky top-0 z-40 flex h-14 w-full items-center justify-between bg-white/70 px-6 py-1 backdrop-blur-sm transition-colors duration-500 supports-backdrop-blur:bg-white/60 lg:z-50 lg:border-b lg:border-slate-900/10"
+	class="sticky top-0 z-40 flex h-14 w-full items-center justify-between bg-white/70 px-6 py-1 backdrop-blur-sm transition-colors duration-500 supports-backdrop-blur:bg-white/60 lg:z-50 lg:border-b lg:border-slate-900/10 dark:bg-gray-800/70"
 >
 	<a href="/" class="h-full" aria-label="Zur Startseite">
 		<!-- svelte-ignore a11y_missing_attribute -->
@@ -24,11 +24,11 @@
 		<a href="/chronik">Chronik</a>
 	</div>
 </nav>
-<div class="mx-auto mt-6 flex w-full flex-1 flex-col items-center">
+<div class="mx-auto mt-6 flex w-full flex-1 flex-col items-center dark:bg-gray-800 dark:text-white">
 	{@render children?.()}
 </div>
 
-<footer class="px mt-12 flex justify-center gap-8 bg-gray-100 p-4">
+<footer class="px mt-12 flex justify-center gap-8 bg-gray-100 p-4 dark:bg-gray-800">
 	<a href="/impressum">Impressum</a>
 	<a href="/datenschutz">Datenschutz</a>
 </footer>

@@ -59,7 +59,7 @@
 				alt="Friedemann Lessing beim Dirigieren"
 			/>
 			<div
-				class="mt-4 rounded-sm md:absolute md:bottom-1/4 md:mt-0 md:ml-[40%] md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
+				class="mt-4 rounded-sm text-black md:absolute md:bottom-1/4 md:mt-0 md:ml-[40%] md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
 			>
 				<CpcParagraph>
 					Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und

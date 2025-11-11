@@ -18,7 +18,7 @@
 		{#if MDComponent}
 			<MDComponent />
 		{/if}
-		<div class="prose">
+		<div class="prose dark:prose-invert">
 			<h2>Ort</h2>
 			<strong>{meta.venue}</strong><br />
 			<span>{meta.street}</span><br />
