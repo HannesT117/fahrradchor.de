@@ -14,6 +14,12 @@
 </svelte:head>
 
 <CpcH2 tag="h1">Konzerte</CpcH2>
+<p class="mb-8 flex w-full flex-col justify-center gap-8 md:w-2/3 lg:w-1/2">
+	Musik machen, Radfahren und Gutes tun: Das ist Herzenssache des Chores seit seiner Gründung im
+	Jahr 1986. Jedes Jahr geht dieses A-Cappella Ensemble mit dem Fahrrad auf Reisen, um in ländlicher
+	Gegend anspruchsvolle Konzerte in den Kirchen zu geben. Es erklingt vier- bis achtstimmige
+	Chormusik von der Renaissance bis zum Jazz. Zum Ensemble gehören ca. 25 Sänger*innen.
+</p>
 <div class="flex w-full flex-col justify-center gap-8 md:w-2/3 lg:w-1/2">
 	{#if data.futureKonzerte.length}
 		<div class="w-full gap-6 rounded-lg p-2 md:p-6 md:shadow-md dark:bg-gray-800 dark:text-white">

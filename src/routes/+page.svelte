@@ -1,11 +1,25 @@
-<script>
+<script lang="ts">
 	import CpcButtonLink from '$lib/components/CpcButtonLink.svelte';
 	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import CpcParagraph from '$lib/components/CpcParagraph.svelte';
+	import CpcAudio from '$lib/components/CpcAudio.svelte';
 	import BgImage from '$lib/img/cpc_konzert_small.webp';
 	import FriedemannImage from '$lib/img/friedemann.webp?enhanced';
 	import SebImage from '$lib/img/seb.webp?enhanced';
 	import TentsImage from '$lib/img/tents.webp?enhanced';
+	import OhrenZuImage from '$lib/img/ohren_zu.jpg?enhanced';
+
+	const imageFiles = import.meta.glob('$lib/img/gallery/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}', {
+		eager: true,
+		query: {
+			enhanced: true
+		}
+	});
+	const imageModules = Object.entries(imageFiles).map(([, module]) => module.default as any);
+	const chunkSize = 7;
+	const imageGroups = imageModules.flatMap((x, i) =>
+		i % chunkSize === 0 ? [imageModules.slice(i, i + chunkSize)] : []
+	);
 </script>
 
 <svelte:head>
@@ -48,6 +62,26 @@
 			Mitglieder des Chores haben professionell mit Musik zu tun oder betreiben sie als
 			anspruchsvolles Hobby.
 		</CpcParagraph>
+	</div>
+
+	<div
+		class="mt-4 rounded-sm text-black md:bottom-1/4 md:mt-0 md:w-2/3 md:self-center md:bg-white
+	md:p-8 md:pl-16 md:drop-shadow-xl"
+	>
+		<h3 class="mb-4 text-center text-3xl">Zum Anhören</h3>
+		<CpcParagraph>
+			Unser Chorleiter Friedemann Lessing war im Podcast <a
+				class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
+				target="_blank"
+				href="https://www.deutschlandfunkkultur.de/per-fahrrad-auf-chorreise-das-bewegte-collegium-pedale-cantorum-100.html"
+				>"Chormusik" (Deutschlandfunk)</a
+			>
+			zu Besuch und hat über unser Projekt gesprochen.
+		</CpcParagraph>
+
+		<CpcAudio
+			src="https://download.deutschlandfunk.de/file/dradio/2025/07/30/per_fahrrad_auf_chorreise_das_bewegte_collegium_pedale_drk_20250730_0005_c0b86b82.mp3#t=00:04:04"
+		/>
 	</div>
 
 	<div>
@@ -124,6 +158,19 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div>
+		<h3 class="mb-4 text-3xl">Impressionen</h3>
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+			{#each imageGroups as imageGroup}
+				<div class="grid gap-4">
+					{#each imageGroup as image}
+						<enhanced:img class="h-auto rounded-lg object-cover" src={image} />
+					{/each}
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>

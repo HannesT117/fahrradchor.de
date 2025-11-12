@@ -3,6 +3,10 @@
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/container-queries';
 
+body {
+	scroll-behavior: smooth;
+}
+
 @theme {
 	--color-cpc-100: #cef5d1;
 	--color-cpc-300: #8aea92;
