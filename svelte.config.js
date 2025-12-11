@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
+import { join } from 'node:path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -10,8 +11,8 @@ const config = {
 		mdsvex({
 			extensions: ['.md', '.svx'],
 			layout: {
-				konzert: 'src/lib/KonzerteLayout.svelte',
-				_: 'src/lib/MarkdownLayout.svelte'
+				konzert: join(import.meta.dirname, 'src/lib/KonzerteLayout.svelte'),
+				_: join(import.meta.dirname, './src/lib/MarkdownLayout.svelte')
 			}
 		}),
 		vitePreprocess()
