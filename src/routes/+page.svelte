@@ -7,7 +7,6 @@
 	import FriedemannImage from '$lib/img/friedemann.webp?enhanced';
 	import SebImage from '$lib/img/seb.webp?enhanced';
 	import TentsImage from '$lib/img/tents.webp?enhanced';
-	import OhrenZuImage from '$lib/img/ohren_zu.jpg?enhanced';
 
 	const imageFiles = import.meta.glob('$lib/img/gallery/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}', {
 		eager: true,
@@ -32,9 +31,7 @@
 </svelte:head>
 
 <div class="bg-choir -mt-20 mb-8 h-[88vh] w-full bg-cover bg-center">
-	<div class="flex h-full w-full flex-col justify-center p-8 lg:items-center">
-		<h1 class="text-cpc-500 mb-4 text-6xl font-bold">Collegium Pedale Cantorum</h1>
-	</div>
+	<h1 class="hidden">Collegium Pedale Cantorum</h1>
 </div>
 
 <div class="flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:px-8">
@@ -64,26 +61,6 @@
 		</CpcParagraph>
 	</div>
 
-	<div
-		class="mt-4 rounded-sm text-black md:bottom-1/4 md:mt-0 md:w-2/3 md:self-center md:bg-white
-	md:p-8 md:pl-16 md:drop-shadow-xl"
-	>
-		<h3 class="mb-4 text-center text-3xl">Zum Anhören</h3>
-		<CpcParagraph>
-			Unser Chorleiter Friedemann Lessing war im Podcast <a
-				class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
-				target="_blank"
-				href="https://www.deutschlandfunkkultur.de/per-fahrrad-auf-chorreise-das-bewegte-collegium-pedale-cantorum-100.html"
-				>"Chormusik" (Deutschlandfunk)</a
-			>
-			zu Besuch und hat über unser Projekt gesprochen.
-		</CpcParagraph>
-
-		<CpcAudio
-			src="https://download.deutschlandfunk.de/file/dradio/2025/07/30/per_fahrrad_auf_chorreise_das_bewegte_collegium_pedale_drk_20250730_0005_c0b86b82.mp3#t=00:04:04"
-		/>
-	</div>
-
 	<div>
 		<h3 class="mb-4 text-3xl">Der Dirigent</h3>
 		<div class="relative">
@@ -99,6 +76,19 @@
 					Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und
 					ist seitdem Leiter des Collegium Pedale Cantorums.
 				</CpcParagraph>
+				<CpcParagraph>
+					Im Podcast <a
+						class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
+						target="_blank"
+						href="https://www.deutschlandfunkkultur.de/per-fahrrad-auf-chorreise-das-bewegte-collegium-pedale-cantorum-100.html"
+						>"Chormusik" (Deutschlandfunk)</a
+					>
+					spricht er über das Projekt.
+				</CpcParagraph>
+
+				<CpcAudio
+					src="https://download.deutschlandfunk.de/file/dradio/2025/07/30/per_fahrrad_auf_chorreise_das_bewegte_collegium_pedale_drk_20250730_0005_c0b86b82.mp3#t=00:04:04"
+				/>
 			</div>
 		</div>
 	</div>
