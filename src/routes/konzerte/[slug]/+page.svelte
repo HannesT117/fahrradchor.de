@@ -5,7 +5,7 @@
 		data: PageData;
 	}
 	const { data }: Props = $props();
-	const { MDComponent, meta } = data;
+	const { MDComponent, meta } = $derived(data);
 </script>
 
 <svelte:head>

@@ -8,9 +8,11 @@
 	}
 	const { data, form }: Props = $props();
 
-	if (form?.error) {
-		console.error(form.error);
-	}
+	$effect(() => {
+		if (form?.error) {
+			console.error(form.error);
+		}
+	});
 </script>
 
 <CpcH2>Voting Lieder 2024</CpcH2>
