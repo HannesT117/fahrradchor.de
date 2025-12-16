@@ -69,82 +69,84 @@
 				src={FriedemannImage}
 				alt="Friedemann Lessing beim Dirigieren"
 			/>
-			<div
-				class="mt-4 rounded-sm text-black md:absolute md:bottom-1/4 md:mt-0 md:ml-[40%] md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl"
-			>
-				<CpcParagraph>
-					Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und
-					ist seitdem Leiter des Collegium Pedale Cantorums.
-				</CpcParagraph>
-				<CpcParagraph>
-					Im Podcast <a
-						class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
-						target="_blank"
-						href="https://www.deutschlandfunkkultur.de/per-fahrrad-auf-chorreise-das-bewegte-collegium-pedale-cantorum-100.html"
-						>"Chormusik" (Deutschlandfunk)</a
-					>
-					spricht er über das Projekt.
-				</CpcParagraph>
+			<div class="mt-4 md:absolute md:top-0 md:mt-0 md:ml-[40%] md:flex md:h-full md:items-center">
+				<div class="rounded-sm md:bg-white md:p-8 md:pl-16 md:drop-shadow-xl md:dark:text-black">
+					<CpcParagraph>
+						Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und
+						ist seitdem Leiter des Collegium Pedale Cantorums.
+					</CpcParagraph>
+					<CpcParagraph>
+						Im Podcast <a
+							class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
+							target="_blank"
+							href="https://www.deutschlandfunkkultur.de/per-fahrrad-auf-chorreise-das-bewegte-collegium-pedale-cantorum-100.html"
+							>"Chormusik" (Deutschlandfunk)</a
+						>
+						spricht er über das Projekt.
+					</CpcParagraph>
 
-				<CpcAudio
-					src="https://download.deutschlandfunk.de/file/dradio/2025/07/30/per_fahrrad_auf_chorreise_das_bewegte_collegium_pedale_drk_20250730_0005_c0b86b82.mp3#t=00:04:04"
-				/>
+					<CpcAudio
+						src="https://download.deutschlandfunk.de/file/dradio/2025/07/30/per_fahrrad_auf_chorreise_das_bewegte_collegium_pedale_drk_20250730_0005_c0b86b82.mp3#t=00:04:04"
+					/>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div>
-		<h3 class="mb-4 text-3xl">Die Konzertreise</h3>
 		<div>
-			<CpcParagraph>Mit neuem Programm geht es jedes Jahr im Sommer auf Tour.</CpcParagraph>
+			<h3 class="mb-4 text-3xl">Die Konzertreise</h3>
+			<div>
+				<CpcParagraph>Mit neuem Programm geht es jedes Jahr im Sommer auf Tour.</CpcParagraph>
 
-			<div class="gap-6 md:flex md:flex-row-reverse">
-				<div class="md:float-right md:max-w-96 md:overflow-hidden">
-					<enhanced:img
-						class="max-h-full min-w-full rounded-sm md:min-h-full md:object-cover md:object-right"
-						src={SebImage}
-						alt="Ein Fahrrad fahrendes CPC-Mitglied auf einem ländlichen Radweg von hinten"
-					/>
-				</div>
-				<div class="mt-4 h-fit grid-flow-row grid-cols-2 gap-4 md:flex-1 lg:grid">
-					<div>
-						<h4 class="mb-2 text-xl">Die Route</h4>
-						<CpcParagraph>
-							Unsere Reise führt uns durch verschiedene Regionen Ostdeutschlands. Der Chor fährt die
-							Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60 Kilometer pro
-							Tag.
-						</CpcParagraph>
+				<div class="gap-6 md:flex md:flex-row-reverse">
+					<div class="md:float-right md:max-w-96 md:overflow-hidden">
+						<enhanced:img
+							class="max-h-full min-w-full rounded-sm md:min-h-full md:object-cover md:object-right"
+							src={SebImage}
+							alt="Ein Fahrrad fahrendes CPC-Mitglied auf einem ländlichen Radweg von hinten"
+						/>
 					</div>
+					<div class="mt-4 h-fit grid-flow-row grid-cols-2 gap-4 md:flex-1 lg:grid">
+						<div>
+							<h4 class="mb-2 text-xl">Die Route</h4>
+							<CpcParagraph>
+								Unsere Reise führt uns durch verschiedene Regionen Ostdeutschlands. Der Chor fährt
+								die Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60 Kilometer
+								pro Tag.
+							</CpcParagraph>
+						</div>
 
-					<div>
-						<h4 class="mb-2 text-xl">Das Programm</h4>
-						<CpcParagraph>
-							Jedes Jahr im Frühjahr trifft sich der Chor, über das Sommerprogramm abzustimmen. Auf
-							unserer Tour singen wir ein buntes Programm, von Altmeistern der Rennaisance über
-							Volkslieder und Gospels bis hin zu Popsongs.
-						</CpcParagraph>
-					</div>
+						<div>
+							<h4 class="mb-2 text-xl">Das Programm</h4>
+							<CpcParagraph>
+								Jedes Jahr im Frühjahr trifft sich der Chor, über das Sommerprogramm abzustimmen.
+								Auf unserer Tour singen wir ein buntes Programm, von Altmeistern der Rennaisance
+								über Volkslieder und Gospels bis hin zu Popsongs.
+							</CpcParagraph>
+						</div>
 
-					<div>
-						<h4 class="mb-2 text-xl">Der Rahmen</h4>
-						<CpcParagraph>
-							Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
-							Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck bitten
-							wir am Ende des Konzerts um eine Spende für <a
-								class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
-								target="_blank"
-								href="https://www.german-doctors.de/">German Doctors</a
-							>.
-						</CpcParagraph>
-					</div>
+						<div>
+							<h4 class="mb-2 text-xl">Der Rahmen</h4>
+							<CpcParagraph>
+								Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
+								Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck
+								bitten wir am Ende des Konzerts um eine Spende für <a
+									class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
+									target="_blank"
+									href="https://www.german-doctors.de/">German Doctors</a
+								>.
+							</CpcParagraph>
+						</div>
 
-					<div>
-						<h4 class="mb-2 text-xl">Die Termine</h4>
-						<CpcParagraph
-							>2025 tourten wir vom 26. Juli bis 2. August in der Altmark. Die einzelnen Daten der
-							Konzerte sind in unserem Kalender zu finden.</CpcParagraph
-						>
-						<CpcButtonLink href="/konzerte">Zum Kalender</CpcButtonLink>
+						<div>
+							<h4 class="mb-2 text-xl">Die Termine</h4>
+							<CpcParagraph
+								>2025 tourten wir vom 26. Juli bis 2. August in der Altmark. Die einzelnen Daten der
+								Konzerte sind in unserem Kalender zu finden.</CpcParagraph
+							>
+							<CpcButtonLink href="/konzerte">Zum Kalender</CpcButtonLink>
+						</div>
 					</div>
 				</div>
 			</div>

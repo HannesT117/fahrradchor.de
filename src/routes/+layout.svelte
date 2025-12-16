@@ -16,7 +16,7 @@
 		<!-- svelte-ignore a11y_missing_attribute -->
 		<img class="h-full" src="/logo.svg" aria-hidden="true" />
 	</a>
-	<p class="text-cpc-700 flex-1 text-xl">Collegium Pedale Cantorum</p>
+	<p class="text-cpc-700 text-s hidden flex-1 sm:block sm:text-xl">Collegium Pedale Cantorum</p>
 	<div class="flex-end flex gap-4">
 		{#if page.url.pathname !== '/'}
 			<a href="/">Home</a>
