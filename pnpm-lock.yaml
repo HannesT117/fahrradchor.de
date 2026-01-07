@@ -26,8 +26,8 @@ importers:
         specifier: ^0.27.3
         version: 0.27.3
       pnpm:
-        specifier: ^10.25.0
-        version: 10.25.0
+        specifier: ^10.27.0
+        version: 10.27.0
     devDependencies:
       '@eslint/compat':
         specifier: ^1.4.1
@@ -2114,8 +2114,8 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  pnpm@10.25.0:
-    resolution: {integrity: sha512-XoJjkCevN8+DIGG8xtY5whljRIjg8rrr54UCink957Ul/80/f/V09emGBlTgmP6FK6isXdXO/hdn0joCCpL1AQ==}
+  pnpm@10.27.0:
+    resolution: {integrity: sha512-ctaZ2haxF5wUup5k3HHJpAmIy9xlwmTLDkidt96RfyDc9NZNhyNiXylpulLUt+KhFwaC2awqXcrqq3MrfhbwSg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -4519,7 +4519,7 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  pnpm@10.25.0: {}
+  pnpm@10.27.0: {}
 
   postcss-load-config@3.1.4(postcss@8.5.6)(ts-node@10.9.1(@types/node@22.19.3)(typescript@5.9.3)):
     dependencies:
