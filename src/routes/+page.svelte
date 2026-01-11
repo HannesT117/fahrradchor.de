@@ -1,8 +1,11 @@
 <script lang="ts">
-	import CpcButtonLink from '$lib/components/CpcButtonLink.svelte';
 	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import CpcParagraph from '$lib/components/CpcParagraph.svelte';
 	import CpcAudio from '$lib/components/CpcAudio.svelte';
+	import CpcSection from '$lib/components/CpcSection.svelte';
+	import CpcInfoBox from '$lib/components/CpcInfoBox.svelte';
+	import CpcImageTextBlock from '$lib/components/CpcImageTextBlock.svelte';
+	import CpcGalleryGrid from '$lib/components/CpcGalleryGrid.svelte';
 	import BgImage from '$lib/img/cpc_konzert_small.webp';
 	import FriedemannImage from '$lib/img/friedemann.webp?enhanced';
 	import SebImage from '$lib/img/seb.webp?enhanced';
@@ -15,10 +18,6 @@
 		}
 	});
 	const imageModules = Object.entries(imageFiles).map(([, module]) => module.default as any);
-	const chunkSize = 7;
-	const imageGroups = imageModules.flatMap((x, i) =>
-		i % chunkSize === 0 ? [imageModules.slice(i, i + chunkSize)] : []
-	);
 </script>
 
 <svelte:head>
@@ -43,11 +42,11 @@
 			alt="Eine Wiese voll Zelten mit der Sonne im Hintergrund"
 		/>
 		<CpcParagraph>
-			Jedes Jahr im Sommer geht das Ensemble „Collegium Pedale Cantorum“ mit dem Fahrrad auf
+			Jedes Jahr im Sommer geht das Ensemble „Collegium Pedale Cantorum" mit dem Fahrrad auf
 			Chorreise. Matte, Schlafsack und Zelte sind dabei unverzichtbare Ausrüstung.
 		</CpcParagraph>
 		<CpcParagraph>
-			Durch eine lebendige Moderation spricht das „Collegium Pedale Cantorum“ das Publikum ganz
+			Durch eine lebendige Moderation spricht das „Collegium Pedale Cantorum" das Publikum ganz
 			direkt an und begeistert für die Musik. Aus der Freude am Musizieren und Zuhören soll auch
 			Freude für andere erwachsen. Das Ensemble sammelt daher jedes Jahr für gemeinnützige Projekte
 			und bittet am Ausgang herzlich um die Spenden der Konzertbesucher:innen.
@@ -61,9 +60,8 @@
 		</CpcParagraph>
 	</div>
 
-	<div>
-		<h3 class="mb-4 text-3xl">Der Dirigent</h3>
-		<div class="relative">
+	<CpcSection title="Der Dirigent">
+		<CpcImageTextBlock imagePosition="left">
 			<enhanced:img
 				class="rounded-sm object-cover md:h-80 md:w-1/2"
 				src={FriedemannImage}
@@ -90,79 +88,60 @@
 					/>
 				</div>
 			</div>
-		</div>
-	</div>
+		</CpcImageTextBlock>
+	</CpcSection>
 
-	<div>
-		<div>
-			<h3 class="mb-4 text-3xl">Die Konzertreise</h3>
-			<div>
-				<CpcParagraph>Mit neuem Programm geht es jedes Jahr im Sommer auf Tour.</CpcParagraph>
+	<CpcSection title="Die Konzertreise">
+		<CpcParagraph>Mit neuem Programm geht es jedes Jahr im Sommer auf Tour.</CpcParagraph>
 
-				<div class="gap-6 md:flex md:flex-row-reverse">
-					<div class="md:float-right md:max-w-96 md:overflow-hidden">
-						<enhanced:img
-							class="max-h-full min-w-full rounded-sm md:min-h-full md:object-cover md:object-right"
-							src={SebImage}
-							alt="Ein Fahrrad fahrendes CPC-Mitglied auf einem ländlichen Radweg von hinten"
-						/>
-					</div>
-					<div class="mt-4 h-fit grid-flow-row grid-cols-2 gap-4 md:flex-1 lg:grid">
-						<div>
-							<h4 class="mb-2 text-xl">Die Route</h4>
-							<CpcParagraph>
-								Unsere Reise führt uns durch verschiedene Regionen Ostdeutschlands. Der Chor fährt
-								die Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60 Kilometer
-								pro Tag.
-							</CpcParagraph>
-						</div>
+		<div class="gap-6 md:flex md:flex-row-reverse">
+			<div class="md:float-right md:max-w-96 md:overflow-hidden">
+				<enhanced:img
+					class="max-h-full min-w-full rounded-sm md:min-h-full md:object-cover md:object-right"
+					src={SebImage}
+					alt="Ein Fahrrad fahrendes CPC-Mitglied auf einem ländlichen Radweg von hinten"
+				/>
+			</div>
+			<div class="mt-4 h-fit grid-flow-row grid-cols-2 gap-4 md:flex-1 lg:grid">
+				<CpcInfoBox title="Die Route">
+					<CpcParagraph>
+						Unsere Reise führt uns durch verschiedene Regionen Ostdeutschlands. Der Chor fährt
+						die Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60 Kilometer
+						pro Tag.
+					</CpcParagraph>
+				</CpcInfoBox>
 
-						<div>
-							<h4 class="mb-2 text-xl">Das Programm</h4>
-							<CpcParagraph>
-								Jedes Jahr im Frühjahr trifft sich der Chor, über das Sommerprogramm abzustimmen.
-								Auf unserer Tour singen wir ein buntes Programm, von Altmeistern der Rennaisance
-								über Volkslieder und Gospels bis hin zu Popsongs.
-							</CpcParagraph>
-						</div>
+				<CpcInfoBox title="Das Programm">
+					<CpcParagraph>
+						Jedes Jahr im Frühjahr trifft sich der Chor, über das Sommerprogramm abzustimmen.
+						Auf unserer Tour singen wir ein buntes Programm, von Altmeistern der Rennaisance
+						über Volkslieder und Gospels bis hin zu Popsongs.
+					</CpcParagraph>
+				</CpcInfoBox>
 
-						<div>
-							<h4 class="mb-2 text-xl">Der Rahmen</h4>
-							<CpcParagraph>
-								Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
-								Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck
-								bitten wir am Ende des Konzerts um eine Spende für <a
-									class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
-									target="_blank"
-									href="https://www.german-doctors.de/">German Doctors</a
-								>.
-							</CpcParagraph>
-						</div>
+				<CpcInfoBox title="Der Rahmen">
+					<CpcParagraph>
+						Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
+						Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck
+						bitten wir am Ende des Konzerts um eine Spende für <a
+							class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
+							target="_blank"
+							href="https://www.german-doctors.de/">German Doctors</a
+						>.
+					</CpcParagraph>
+				</CpcInfoBox>
 
-						<div>
-							<h4 class="mb-2 text-xl">Die Termine</h4>
-							<CpcParagraph
-								>2025 tourten wir vom 26. Juli bis 2. August in der Altmark. Die einzelnen Daten der
-								Konzerte sind in unserem Kalender zu finden.</CpcParagraph
-							>
-							<CpcButtonLink href="/konzerte">Zum Kalender</CpcButtonLink>
-						</div>
-					</div>
-				</div>
+				<CpcInfoBox title="Die Termine" link="/konzerte" linkText="Zum Kalender">
+					<CpcParagraph>
+						2025 tourten wir vom 26. Juli bis 2. August in der Altmark. Die einzelnen Daten der
+						Konzerte sind in unserem Kalender zu finden.
+					</CpcParagraph>
+				</CpcInfoBox>
 			</div>
 		</div>
-	</div>
+	</CpcSection>
 
-	<div>
-		<h3 class="mb-4 text-3xl">Impressionen</h3>
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-			{#each imageGroups as imageGroup}
-				<div class="grid gap-4">
-					{#each imageGroup as image}
-						<enhanced:img class="h-auto rounded-lg object-cover" src={image} />
-					{/each}
-				</div>
-			{/each}
-		</div>
-	</div>
+	<CpcSection title="Impressionen">
+		<CpcGalleryGrid images={imageModules} chunkSize={7} />
+	</CpcSection>
 </div>
