@@ -17,15 +17,6 @@
 	function getBarWidth(score: number): number {
 		return (Math.abs(score) / maxAbsScore) * 100;
 	}
-
-	// Check if piece is in top or bottom section
-	function isInTopSection(index: number): boolean {
-		return index < HIGHLIGHT_COUNT;
-	}
-
-	function isInBottomSection(index: number): boolean {
-		return data.pieces.length >= HIGHLIGHT_COUNT && index >= data.pieces.length - HIGHLIGHT_COUNT;
-	}
 </script>
 
 <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:px-8">
