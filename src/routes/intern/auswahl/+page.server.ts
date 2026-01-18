@@ -1,7 +1,5 @@
-import { BLOB_READ_WRITE_TOKEN } from '$env/static/private';
-import { getSonglist, getVotingResults } from '$lib/server/blob';
+import { getSonglist, getVotingResults, saveVotingResults } from '$lib/server/blob';
 import { fail, redirect } from '@sveltejs/kit';
-import { put } from '@vercel/blob';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -32,12 +30,7 @@ export const actions = {
 			});
 			results.people.push(name as string);
 
-			await put('results.json', JSON.stringify(results), {
-				cacheControlMaxAge: 5,
-				addRandomSuffix: false,
-				access: 'public',
-				token: BLOB_READ_WRITE_TOKEN
-			});
+			await saveVotingResults(results);
 		} catch (e: any) {
 			return fail(500, { error: e.message });
 		}
