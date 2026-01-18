@@ -4,7 +4,7 @@ start: 2025-07-31T19:30
 end: 2025-07-31T20:45
 venue: Kirche
 street: Griebener Breite Straße 36
-plz: 39517
+plz: "39517"
 place: Grieben
 layout: konzert
 ---

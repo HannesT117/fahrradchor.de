@@ -4,7 +4,7 @@ start: 2025-07-29T19:30
 end: 2025-07-29T20:45
 venue: Dorfkirche
 street: Dorfstraße 25
-plz: 39524
+plz: "39524"
 place: Kamern
 layout: konzert
 ---

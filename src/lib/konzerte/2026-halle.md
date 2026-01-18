@@ -4,7 +4,7 @@ start: 2026-01-24T17:00
 end: 2026-01-24T18:15
 venue: Petruskirche
 street: An der Petruskirche 3
-plz: 06120
+plz: "06120"
 place: Kröllwitz-Halle
 link: https://www.petruskirche-halle.de/lilac_cms/de/122067,,kkal,termin_details,,37285,,0/index.html
 layout: konzert

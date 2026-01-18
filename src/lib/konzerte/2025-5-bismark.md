@@ -4,7 +4,7 @@ start: 2025-08-01T19:30
 end: 2025-08-01T20:45
 venue: Stadtkirche
 street: Breite Straße 11
-plz: 39629
+plz: "39629"
 place: Bismark (Altmark)
 layout: konzert
 ---

@@ -4,7 +4,7 @@ start: 2025-07-30T19:30
 end: 2025-07-30T20:45
 venue: Stadtkirche St. Georg
 street: Kirchplatz 2
-plz: 39596
+plz: "39596"
 place: Arneburg
 layout: konzert
 ---

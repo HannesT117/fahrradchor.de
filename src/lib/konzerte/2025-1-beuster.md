@@ -4,7 +4,7 @@ start: 2025-07-28T19:30
 end: 2025-07-28T20:45
 venue: Nikolaikirche
 street: Schulhof 5
-plz: 39615
+plz: "39615"
 place: Seehausen-Beuster
 layout: konzert
 ---

@@ -4,7 +4,7 @@ start: 2025-02-01T17:00
 end: 2025-02-01T18:15
 venue: Evangelische Stadtkirche Biesenthal
 street: Kirchgasse
-plz: 16359
+plz: "16359"
 place: Biesenthal
 layout: konzert
 ---
