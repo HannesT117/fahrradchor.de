@@ -11,7 +11,6 @@ interface KonzertMetadata {
 	place: string;
 }
 
-export const prerender = true;
 const files = import.meta.glob<{ metadata: KonzertMetadata }>('$lib/konzerte/*.{md,svx,svelte.md}');
 const mapped = Object.entries(files).map(async ([path, res]) => {
 	const module = await res();
