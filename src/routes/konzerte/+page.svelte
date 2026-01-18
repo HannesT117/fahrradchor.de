@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CpcH2 from '$lib/components/CpcH2.svelte';
+	import CpcLink from '$lib/components/CpcLink.svelte';
 	import type { PageData } from './$types';
 
 	interface Props {
@@ -22,9 +23,10 @@
 <div class="flex w-full flex-col justify-center gap-8 md:w-2/3 lg:w-1/2">
 	{#if data.futureKonzerte.length}
 		<div class="w-full gap-6 rounded-lg p-2 md:p-6 md:shadow-md dark:bg-gray-800 dark:text-white">
-			<h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">
+			<h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
 				Bevorstehende Konzerte
 			</h2>
+			<p class="text-sm text-gray-500">Eintritt frei - Spenden für <CpcLink href="https://www.german-doctors.de/en/" target="_blank">German Doctors</CpcLink> erbeten</p>
 			<ul>
 				{#each data.futureKonzerte as konzert}
 					<li class="border-solid border-gray-200 py-4 md:px-4 [&:not(:last-child)]:border-b-1">
@@ -42,7 +44,6 @@
 					</li>
 				{/each}
 			</ul>
-			<p class="mt-4 text-sm text-gray-500">Eintritt frei - Spenden erbeten</p>
 		</div>
 	{/if}
 	{#if data.pastKonzerte.length}

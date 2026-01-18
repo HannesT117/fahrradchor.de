@@ -10,6 +10,7 @@
 	import FriedemannImage from '$lib/img/friedemann.webp?enhanced';
 	import SebImage from '$lib/img/seb.webp?enhanced';
 	import TentsImage from '$lib/img/tents.webp?enhanced';
+	import CpcLink from '$lib/components/CpcLink.svelte';
 
 	const imageFiles = import.meta.glob('$lib/img/gallery/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}', {
 		eager: true,
@@ -74,12 +75,9 @@
 						ist seitdem Leiter des Collegium Pedale Cantorums.
 					</CpcParagraph>
 					<CpcParagraph>
-						Im Podcast <a
-							class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
-							target="_blank"
+						Im Podcast <CpcLink
 							href="https://www.deutschlandfunkkultur.de/per-fahrrad-auf-chorreise-das-bewegte-collegium-pedale-cantorum-100.html"
-							>"Chormusik" (Deutschlandfunk)</a
-						>
+							>"Chormusik" (Deutschlandfunk)</CpcLink>
 						spricht er über das Projekt.
 					</CpcParagraph>
 
@@ -123,11 +121,9 @@
 					<CpcParagraph>
 						Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
 						Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck
-						bitten wir am Ende des Konzerts um eine Spende für <a
-							class="text-cpc-900 hover:text-cpcAnalog-500 hover:underline"
-							target="_blank"
-							href="https://www.german-doctors.de/">German Doctors</a
-						>.
+						bitten wir am Ende des Konzerts um eine Spende für <CpcLink
+							href="https://www.german-doctors.de/">German Doctors
+						</CpcLink>.
 					</CpcParagraph>
 				</CpcInfoBox>
 
