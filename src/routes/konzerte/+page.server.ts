@@ -9,6 +9,7 @@ interface KonzertMetadata {
 	street: string;
 	plz: string;
 	place: string;
+	link?: string;
 }
 
 const files = import.meta.glob<{ metadata: KonzertMetadata }>('$lib/konzerte/*.{md,svx,svelte.md}');
@@ -26,14 +27,9 @@ const konzerte = (await Array.fromAsync(mapped))
 		const { date, time } = createDateTimeStrings(metadata.start, metadata.end);
 
 		return {
-			title: metadata.title,
+			...metadata,
 			date,
-			time,
-			venue: metadata.venue,
-			street: metadata.street,
-			plz: metadata.plz,
-			place: metadata.place,
-			end: metadata.end
+			time
 		};
 	})
 	.sort((a, b) => new Date(a.end).getTime() - new Date(b.end).getTime());

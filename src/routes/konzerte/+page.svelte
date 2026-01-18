@@ -39,6 +39,9 @@
 								<div class="font-semibold">{konzert.venue}</div>
 								<div class="text-gray-600 dark:text-gray-400">{konzert.street}</div>
 								<div class="text-gray-600 dark:text-gray-400">{konzert.plz} {konzert.place}</div>
+								{#if konzert.link}
+								    <CpcLink href={konzert.link}>Link zur Veranstaltung</CpcLink>
+								{/if}
 							</div>
 						</div>
 					</li>

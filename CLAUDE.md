@@ -58,7 +58,7 @@ Concert information is managed through Markdown files in `src/lib/konzerte/`:
 
 - Each concert is a `.md` file with frontmatter metadata
 - Layout is defined as `konzert` in frontmatter, which maps to `KonzerteLayout.svelte`
-- Frontmatter fields: `title`, `start`, `end`, `venue`, `street`, `plz`, `place`
+- Frontmatter fields: `title`, `start`, `end`, `venue`, `street`, `plz`, `place`, `link`
 - Files are loaded via `import.meta.glob()` in `konzerte/+page.server.ts`
 - Concerts are automatically sorted and split into past/future events
 
