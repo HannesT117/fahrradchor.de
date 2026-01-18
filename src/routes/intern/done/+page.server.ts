@@ -1,12 +1,11 @@
-import { getVotingResults } from '$lib/server/blob';
+import { getResults } from '$lib/server/voting';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const { pieces, people } = await getVotingResults();
-	const sorted = Object.entries(pieces).sort((p1, p2) => p2[1] - p1[1]);
+	const { pieces, participantCount } = await getResults();
 
 	return {
-		pieces: sorted,
-		numberOfParticipants: people.length
+		pieces,
+		numberOfParticipants: participantCount
 	};
 };

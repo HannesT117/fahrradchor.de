@@ -29,18 +29,3 @@ export const getSonglist = async (): Promise<Songlist> => {
 export const getVotingResults = async (): Promise<VotingResults> => {
 	return await download('results.json');
 };
-
-export const saveVotingResults = async (results: VotingResults): Promise<void> => {
-	const { put } = await import('@vercel/blob');
-
-	await put('results.json', JSON.stringify(results), {
-		cacheControlMaxAge: 5,
-		addRandomSuffix: false,
-		access: 'public',
-		token: BLOB_READ_WRITE_TOKEN
-	});
-
-	// NOTE: Race condition risk exists - Vercel Blob doesn't support atomic operations.
-	// Given the small number of users (choir members voting), simultaneous submissions
-	// are unlikely. Adding a database with transaction support is currently out of scope.
-};

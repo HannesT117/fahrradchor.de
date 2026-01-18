@@ -1,9 +1,9 @@
-import { getSonglist, getVotingResults, saveVotingResults } from '$lib/server/blob';
+import { getAvailableSongs, submitVote } from '$lib/server/voting';
 import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const { pieces } = await getSonglist();
+	const pieces = await getAvailableSongs();
 
 	return {
 		pieces
@@ -12,34 +12,25 @@ export const load: PageServerLoad = async () => {
 
 export const actions = {
 	default: async ({ request }) => {
-		try {
-			const formData = await request.formData();
+		const formData = await request.formData();
 
-			const name = formData.get('name')?.toString();
+		const name = formData.get('name')?.toString();
+		if (!name) {
+			return fail(400, { error: 'Name ist erforderlich' });
+		}
 
-			if (!name) {
-				return fail(400, { error: 'Name ist erforderlich' });
-			}
+		formData.delete('name');
 
-			formData.delete('name');
+		// Convert form data to votes object
+		const votes: Record<string, number> = {};
+		for (const [piece, value] of formData.entries()) {
+			votes[piece] = Number(value);
+		}
 
-			const results = await getVotingResults();
+		const result = await submitVote(name, votes);
 
-			if (results.people.includes(name)) {
-				return fail(400, {
-					error: 'Unter diesem Namen hat leider schon eine Person teilgenommen.'
-				});
-			}
-
-			const pieces = formData.entries();
-			[...pieces].forEach(([piece, value]) => {
-				results.pieces[piece] = (results.pieces[piece] ?? 0) + Number(value);
-			});
-			results.people.push(name);
-
-			await saveVotingResults(results);
-		} catch (e: any) {
-			return fail(500, { error: e.message });
+		if (!result.success) {
+			return fail(400, { error: result.error });
 		}
 
 		return redirect(302, '/intern/done');
