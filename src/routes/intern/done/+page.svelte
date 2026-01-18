@@ -11,7 +11,7 @@
 	const { data }: Props = $props();
 
 	// Calculate max absolute score for bar width scaling
-	const maxAbsScore = Math.max(...data.pieces.map(([_, score]) => Math.abs(score)), 1);
+	const maxAbsScore = $derived(Math.max(...data.pieces.map(([_, score]) => Math.abs(score)), 1));
 
 	// Get bar width as percentage
 	function getBarWidth(score: number): number {

@@ -4,7 +4,9 @@
 			"Bash(pnpm run lint)",
 			"Bash(pnpm run test*)",
 			"Bash(pnpm run build*)",
-			"Bash(pnpm run dev*)"
+			"Bash(pnpm run dev*)",
+			"Bash(git status*)",
+			"Bash(git diff*)"
 		],
 		"deny": ["Bash(curl:*)", "Read(./.env)", "Read(./.env.*)"]
 	},
