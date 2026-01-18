@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CpcH2 from '$lib/components/CpcH2.svelte';
-	import ArrowRight from '$lib/components/icons/ArrowRight.svelte';
 	import type { PageData } from './$types';
 
 	interface Props {
@@ -28,18 +27,22 @@
 			</h2>
 			<ul>
 				{#each data.futureKonzerte as konzert}
-					<li class="hover:bg-cpc-100 border-solid border-gray-200 [&:not(:last-child)]:border-b-1">
-						<a
-							href="konzerte/{konzert.slug}"
-							class="grid grid-cols-[2fr_1fr_auto] items-center gap-4 py-4 md:p-4"
-						>
-							<span class="font-light text-gray-500">{konzert.time}</span>
-							<span>{konzert.place}</span>
-							<ArrowRight />
-						</a>
+					<li class="border-solid border-gray-200 py-4 md:px-4 [&:not(:last-child)]:border-b-1">
+						<div class="grid grid-cols-1 gap-2 md:grid-cols-[1fr_1fr] md:gap-4">
+							<div class="flex flex-row gap-1 md:flex-col md:gap-0">
+								<span class="font-light text-gray-500">{konzert.date}</span>
+								<span class="font-light text-gray-500">{konzert.time}</span>
+							</div>
+							<div>
+								<div class="font-semibold">{konzert.venue}</div>
+								<div class="text-gray-600 dark:text-gray-400">{konzert.street}</div>
+								<div class="text-gray-600 dark:text-gray-400">{konzert.plz} {konzert.place}</div>
+							</div>
+						</div>
 					</li>
 				{/each}
 			</ul>
+			<p class="mt-4 text-sm text-gray-500">Eintritt frei - Spenden erbeten</p>
 		</div>
 	{/if}
 	{#if data.pastKonzerte.length}
@@ -47,15 +50,18 @@
 			<h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Vergangene Konzerte</h2>
 			<ul>
 				{#each data.pastKonzerte as konzert}
-					<li class="hover:bg-cpc-100 border-solid border-gray-200 [&:not(:last-child)]:border-b-1">
-						<a
-							href="konzerte/{konzert.slug}"
-							class="grid grid-cols-[2fr_1fr_auto] items-center gap-4 py-4 md:p-4"
-						>
-							<span class="font-light text-gray-500">{konzert.time}</span>
-							<span>{konzert.place}</span>
-							<ArrowRight />
-						</a>
+					<li class="border-solid border-gray-200 py-4 md:px-4 [&:not(:last-child)]:border-b-1">
+						<div class="grid grid-cols-1 gap-2 md:grid-cols-[1fr_1fr] md:gap-4">
+							<div class="flex flex-row gap-1 md:flex-col md:gap-0">
+								<span class="font-light text-gray-500">{konzert.date}</span>
+								<span class="font-light text-gray-500">{konzert.time}</span>
+							</div>
+							<div>
+								<div class="font-semibold">{konzert.venue}</div>
+								<div class="text-gray-600 dark:text-gray-400">{konzert.street}</div>
+								<div class="text-gray-600 dark:text-gray-400">{konzert.plz} {konzert.place}</div>
+							</div>
+						</div>
 					</li>
 				{/each}
 			</ul>

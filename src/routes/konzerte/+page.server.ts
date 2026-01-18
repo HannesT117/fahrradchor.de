@@ -1,9 +1,18 @@
-import { createTimeString } from '$lib/time';
+import { createDateTimeStrings } from '$lib/time';
 import type { PageServerLoad } from './$types';
-import path from 'path';
+
+interface KonzertMetadata {
+	title: string;
+	start: string;
+	end: string;
+	venue: string;
+	street: string;
+	plz: string;
+	place: string;
+}
 
 export const prerender = true;
-const files = import.meta.glob('$lib/konzerte/*.{md,svx,svelte.md}');
+const files = import.meta.glob<{ metadata: KonzertMetadata }>('$lib/konzerte/*.{md,svx,svelte.md}');
 const mapped = Object.entries(files).map(async ([path, res]) => {
 	const module = await res();
 
@@ -15,14 +24,20 @@ const mapped = Object.entries(files).map(async ([path, res]) => {
 const konzerte = (await Array.fromAsync(mapped))
 	.map((k) => {
 		const { metadata } = k.module;
+		const { date, time } = createDateTimeStrings(metadata.start, metadata.end);
 
 		return {
-			...metadata,
-			time: createTimeString(metadata.start, metadata.end),
-			slug: path.parse(k.path).name
+			title: metadata.title,
+			date,
+			time,
+			venue: metadata.venue,
+			street: metadata.street,
+			plz: metadata.plz,
+			place: metadata.place,
+			end: metadata.end
 		};
 	})
-	.sort((k) => new Date(k.end).getDate());
+	.sort((a, b) => new Date(a.end).getTime() - new Date(b.end).getTime());
 
 const present = new Date();
 const past = konzerte.filter((konzert) => new Date(konzert.end) < present);
