@@ -15,20 +15,27 @@ export const actions = {
 		try {
 			const formData = await request.formData();
 
-			const name = formData.get('name');
+			const name = formData.get('name')?.toString();
+
+			if (!name) {
+				return fail(400, { error: 'Name ist erforderlich' });
+			}
+
 			formData.delete('name');
 
 			const results = await getVotingResults();
 
-			if (results.people.includes(name?.valueOf() as string)) {
-				return fail(400, { duplicate: true });
+			if (results.people.includes(name)) {
+				return fail(400, {
+					error: 'Unter diesem Namen hat leider schon eine Person teilgenommen.'
+				});
 			}
 
 			const pieces = formData.entries();
 			[...pieces].forEach(([piece, value]) => {
 				results.pieces[piece] = (results.pieces[piece] ?? 0) + Number(value);
 			});
-			results.people.push(name as string);
+			results.people.push(name);
 
 			await saveVotingResults(results);
 		} catch (e: any) {
