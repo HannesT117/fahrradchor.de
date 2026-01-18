@@ -1,0 +1,14 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash(pnpm run lint)",
+			"Bash(pnpm run test*)",
+			"Bash(pnpm run build*)",
+			"Bash(pnpm run dev*)"
+		],
+		"deny": ["Bash(curl:*)", "Read(./.env)", "Read(./.env.*)"]
+	},
+	"env": {
+		"CLAUDE_CODE_ENABLE_TELEMETRY": "0"
+	}
+}
