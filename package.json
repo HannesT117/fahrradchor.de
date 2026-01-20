@@ -11,7 +11,10 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"test": "vitest",
+		"test:run": "vitest run",
+		"test:coverage": "vitest run --coverage"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.4.1",
@@ -21,11 +24,13 @@
 		"@sveltejs/vite-plugin-svelte": "^5.1.1",
 		"@tailwindcss/postcss": "^4.1.18",
 		"@tailwindcss/vite": "^4.1.18",
+		"@testing-library/svelte": "^5.3.1",
 		"@types/node": "^22.19.3",
 		"eslint": "^9.39.2",
 		"eslint-config-prettier": "^9.1.2",
 		"eslint-plugin-svelte": "^2.46.1",
 		"globals": "^15.15.0",
+		"jsdom": "^27.4.0",
 		"mdsvex": "^0.12.6",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.1",
@@ -36,7 +41,8 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.49.0",
 		"vercel": "^41.7.8",
-		"vite": "^6.4.1"
+		"vite": "^6.4.1",
+		"vitest": "^4.0.17"
 	},
 	"dependencies": {
 		"@sveltejs/adapter-vercel": "^6.2.0",
