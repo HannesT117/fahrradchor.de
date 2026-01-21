@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { PUBLIC_HIGHLIGHT_COUNT } from '$env/static/public';
+	import CpcH2 from '$lib/components/CpcH2.svelte';
 
 	// Configuration: Number of pieces to show in top/bottom sections
 	const HIGHLIGHT_COUNT = Number(PUBLIC_HIGHLIGHT_COUNT) || 5;
@@ -20,7 +21,7 @@
 </script>
 
 <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:px-8">
-	<h1 class="text-cpc-500 text-6xl font-bold">Vielen Dank</h1>
+	<CpcH2 tag="h1">Erfolgreich abgestimmt</CpcH2>
 	<p>Deine Antwort ist gespeichert. Bisher haben <strong>{data.numberOfParticipants} Personen</strong> abgestimmt.
 	</p>
 

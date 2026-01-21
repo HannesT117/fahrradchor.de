@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
+	import { goto } from '$app/navigation';
+	import CpcH2 from '$lib/components/CpcH2.svelte';
 	import type { ActionData, PageData } from './$types';
 
 	interface Props {
@@ -14,18 +17,36 @@
 
 	let isSubmitting = $state(false);
 
-	// Reset submitting state when form response comes back
-	$effect(() => {
-		if (form) {
-			isSubmitting = false;
+	// Helper to get saved vote value from form error response
+	function getSavedVote(piece: string): number | undefined {
+		if (form && 'values' in form && form.values?.votes) {
+			return form.values.votes[piece];
 		}
-	});
+		return undefined;
+	}
 </script>
 
 <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:px-8">
-	<h1 class="text-cpc-500 text-5xl font-bold sm:text-6xl">Voting Lieder 2024</h1>
+	<CpcH2 tag="h1">Liederauswahl 2025</CpcH2>
 
-	<form method="POST" class="flex flex-col gap-6" onsubmit={() => (isSubmitting = true)}>
+	<form
+		method="POST"
+		class="flex flex-col gap-6"
+		use:enhance={() => {
+			isSubmitting = true;
+			return async ({ result, update }) => {
+				isSubmitting = false;
+				if (result.type === 'success') {
+					// Use replaceState to prevent back navigation to form
+					goto('/intern/liedauswahl/ergebnis', { replaceState: true });
+				} else {
+					// Update form state (preserves error + form values) and scroll to top
+					await update({ reset: false });
+					window.scrollTo({ top: 0, behavior: 'instant' });
+				}
+			};
+		}}
+	>
 		{#if form?.error}
 			<div class="rounded-lg border border-red-400 bg-red-50 px-4 py-3 text-red-700">
 				<p><strong>Fehler:</strong> {form.error}</p>
@@ -39,8 +60,8 @@
 				type="text"
 				id="name"
 				name="name"
+				value={form && 'values' in form ? form.values?.name ?? '' : ''}
 				class="focus:border-cpc-500 focus:ring-cpc-500 w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-1 focus:outline-none"
-				placeholder="Vor- und Nachname"
 				required
 			/>
 		</div>
@@ -48,17 +69,18 @@
 		<!-- Song Voting Items -->
 		<div class="space-y-6">
 			{#each data.pieces as piece}
+				{@const savedVote = getSavedVote(piece)}
 				<fieldset>
 					<legend class="mb-2 font-medium">{piece}</legend>
 					<div class="flex">
 						<label class="flex-1 cursor-pointer rounded-l-md border border-gray-300 px-3 py-2.5 text-center transition-colors has-[:checked]:border-green-500 has-[:checked]:bg-green-100 has-[:checked]:text-green-700 has-[:focus]:z-10 has-[:focus]:ring-2 has-[:focus]:ring-green-500 sm:px-4 sm:py-3">
-							<input type="radio" name={piece} value={VOTE_YES} class="sr-only" /> Singen
+							<input type="radio" name={piece} value={VOTE_YES} checked={savedVote === VOTE_YES} class="sr-only" /> Singen
 						</label>
 						<label class="-ml-px flex-1 cursor-pointer border border-gray-300 px-3 py-2.5 text-center transition-colors has-[:checked]:border-gray-400 has-[:checked]:bg-gray-100 has-[:focus]:z-10 has-[:focus]:ring-2 has-[:focus]:ring-gray-400 sm:px-4 sm:py-3">
-							<input type="radio" name={piece} value={VOTE_NEUTRAL} class="sr-only" /> Neutral
+							<input type="radio" name={piece} value={VOTE_NEUTRAL} checked={savedVote === VOTE_NEUTRAL} class="sr-only" /> Neutral
 						</label>
 						<label class="-ml-px flex-1 cursor-pointer rounded-r-md border border-gray-300 px-3 py-2.5 text-center transition-colors has-[:checked]:border-red-500 has-[:checked]:bg-red-100 has-[:checked]:text-red-700 has-[:focus]:z-10 has-[:focus]:ring-2 has-[:focus]:ring-red-500 sm:px-4 sm:py-3">
-							<input type="radio" name={piece} value={VOTE_NO} class="sr-only" /> Nicht singen
+							<input type="radio" name={piece} value={VOTE_NO} checked={savedVote === VOTE_NO} class="sr-only" /> Nicht singen
 						</label>
 					</div>
 				</fieldset>

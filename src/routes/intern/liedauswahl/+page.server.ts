@@ -1,5 +1,5 @@
 import { getAvailableSongs, submitVote } from '$lib/server/voting';
-import { fail, redirect } from '@sveltejs/kit';
+import { fail } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -14,11 +14,7 @@ export const actions = {
 	default: async ({ request }) => {
 		const formData = await request.formData();
 
-		const name = formData.get('name')?.toString();
-		if (!name) {
-			return fail(400, { error: 'Name ist erforderlich' });
-		}
-
+		const name = formData.get('name')?.toString() ?? '';
 		formData.delete('name');
 
 		// Convert form data to votes object
@@ -27,12 +23,17 @@ export const actions = {
 			votes[piece] = Number(value);
 		}
 
+		if (!name.trim()) {
+			return fail(400, { error: 'Name ist erforderlich', values: { name, votes } });
+		}
+
 		const result = await submitVote(name, votes);
 
 		if (!result.success) {
-			return fail(400, { error: result.error });
+			return fail(400, { error: result.error, values: { name, votes } });
 		}
 
-		return redirect(302, '/intern/done');
+		// Return success - client will navigate to results page
+		return { success: true };
 	}
 } satisfies Actions;
