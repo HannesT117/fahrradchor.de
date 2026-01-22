@@ -1,4 +1,6 @@
 {
+	"plansDirectory": "./plans",
+	"allowedMcpServers": [{ "serverName": "github" }],
 	"permissions": {
 		"allow": [
 			"Bash(pnpm run lint)",
