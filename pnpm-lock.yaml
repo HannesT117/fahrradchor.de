@@ -26,8 +26,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       pnpm:
-        specifier: ^10.27.0
-        version: 10.27.0
+        specifier: ^10.28.2
+        version: 10.28.2
     devDependencies:
       '@eslint/compat':
         specifier: ^1.4.1
@@ -2600,8 +2600,8 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  pnpm@10.27.0:
-    resolution: {integrity: sha512-ctaZ2haxF5wUup5k3HHJpAmIy9xlwmTLDkidt96RfyDc9NZNhyNiXylpulLUt+KhFwaC2awqXcrqq3MrfhbwSg==}
+  pnpm@10.28.2:
+    resolution: {integrity: sha512-QYcvA3rSL3NI47Heu69+hnz9RI8nJtnPdMCPGVB8MdLI56EVJbmD/rwt9kC1Q43uYCPrsfhO1DzC1lTSvDJiZA==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -2928,6 +2928,7 @@ packages:
   tar@6.2.1:
     resolution: {integrity: sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==}
     engines: {node: '>=10'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tar@7.5.2:
     resolution: {integrity: sha512-7NyxrTE4Anh8km8iEy7o0QYPs+0JKBTj5ZaqHg6B39erLg0qYXN3BijtShwbsNSvQ+LN75+KV+C4QR/f6Gwnpg==}
@@ -5637,7 +5638,7 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  pnpm@10.27.0: {}
+  pnpm@10.28.2: {}
 
   postcss-load-config@3.1.4(postcss@8.5.6)(ts-node@10.9.1(@types/node@22.19.3)(typescript@5.9.3)):
     dependencies:
