@@ -74,16 +74,6 @@
 						Kreiskantor Friedemann Lessing aus Osterburg hat das Ensemble 1986 ins Leben gerufen und
 						ist seitdem Leiter des Collegium Pedale Cantorums.
 					</CpcParagraph>
-					<CpcParagraph>
-						Im Podcast <CpcLink
-							href="https://www.deutschlandfunkkultur.de/per-fahrrad-auf-chorreise-das-bewegte-collegium-pedale-cantorum-100.html"
-							>"Chormusik" (Deutschlandfunk)</CpcLink>
-						spricht er über das Projekt.
-					</CpcParagraph>
-
-					<CpcAudio
-						src="https://download.deutschlandfunk.de/file/dradio/2025/07/30/per_fahrrad_auf_chorreise_das_bewegte_collegium_pedale_drk_20250730_0005_c0b86b82.mp3#t=00:04:04"
-					/>
 				</div>
 			</div>
 		</CpcImageTextBlock>
@@ -103,26 +93,26 @@
 			<div class="mt-4 h-fit grid-flow-row grid-cols-2 gap-4 md:flex-1 lg:grid">
 				<CpcInfoBox title="Die Route">
 					<CpcParagraph>
-						Unsere Reise führt uns durch verschiedene Regionen Ostdeutschlands. Der Chor fährt
-						die Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60 Kilometer
-						pro Tag.
+						Unsere Reise führt uns durch verschiedene Regionen Ostdeutschlands. Der Chor fährt die
+						Strecke zwischen den Konzertorten mit dem Fahrrad, zwischen 20 bis 60 Kilometer pro Tag.
 					</CpcParagraph>
 				</CpcInfoBox>
 
 				<CpcInfoBox title="Das Programm">
 					<CpcParagraph>
-						Jedes Jahr im Frühjahr trifft sich der Chor, über das Sommerprogramm abzustimmen.
-						Auf unserer Tour singen wir ein buntes Programm, von Altmeistern der Rennaisance
-						über Volkslieder und Gospels bis hin zu Popsongs.
+						Jedes Jahr im Frühjahr trifft sich der Chor, über das Sommerprogramm abzustimmen. Auf
+						unserer Tour singen wir ein buntes Programm, von Altmeistern der Rennaisance über
+						Volkslieder und Gospels bis hin zu Popsongs.
 					</CpcParagraph>
 				</CpcInfoBox>
 
 				<CpcInfoBox title="Der Rahmen">
 					<CpcParagraph>
 						Der Eintritt zu den Konzerten ist frei. Die Chormitglieder nehmen sich für die Tour
-						Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck
-						bitten wir am Ende des Konzerts um eine Spende für <CpcLink
-							href="https://www.german-doctors.de/">German Doctors
+						Urlaub von ihrer Arbeit und finanzieren die Reise selbst. Für einen guten Zweck bitten
+						wir am Ende des Konzerts um eine Spende für <CpcLink
+							href="https://www.german-doctors.de/"
+							>German Doctors
 						</CpcLink>.
 					</CpcParagraph>
 				</CpcInfoBox>
