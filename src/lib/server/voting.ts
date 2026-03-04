@@ -91,6 +91,7 @@ function tallyVotes(results: VotingResults, newVotes: Record<string, number>): V
 async function saveResults(results: VotingResults): Promise<void> {
 	await put('results.json', JSON.stringify(results), {
 		cacheControlMaxAge: 5,
+		allowOverwrite: true,
 		addRandomSuffix: false,
 		access: 'public',
 		token: BLOB_READ_WRITE_TOKEN
