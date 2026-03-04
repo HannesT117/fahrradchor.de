@@ -22,21 +22,21 @@
 
 <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:px-8">
 	<CpcH2 tag="h1">Erfolgreich abgestimmt</CpcH2>
-	<p>Deine Antwort ist gespeichert. Bisher haben <strong>{data.numberOfParticipants} Personen</strong> abgestimmt.
+	<p>
+		Deine Antwort ist gespeichert. Bisher haben <strong>{data.numberOfParticipants} Personen</strong
+		> abgestimmt.
 	</p>
 
 	<div class="mx-auto w-full max-w-4xl space-y-6">
 		<!-- Top Section -->
 		{#if data.pieces.length >= HIGHLIGHT_COUNT}
 			<div>
-				<h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-600">
+				<h2 class="mb-2 text-sm font-semibold tracking-wide text-gray-600 uppercase">
 					Top {HIGHLIGHT_COUNT} Stücke
 				</h2>
-				<div class="space-y-1.5 rounded-lg bg-green-50 p-3">
+				<div class="space-y-1.5 rounded-lg bg-green-50 p-3 dark:bg-inherit">
 					{#each data.pieces.slice(0, HIGHLIGHT_COUNT) as [piece, score], index}
-						<div
-							class="flex flex-col gap-1 rounded p-2 sm:flex-row sm:items-center sm:gap-4"
-						>
+						<div class="flex flex-col gap-1 rounded p-2 sm:flex-row sm:items-center sm:gap-4">
 							<!-- Piece name -->
 							<div class="flex-shrink-0 text-sm sm:w-2/5 sm:text-base">
 								{piece}
@@ -64,14 +64,12 @@
 
 		{#if data.pieces.length > HIGHLIGHT_COUNT * 2}
 			<div>
-				<h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-600">
+				<h2 class="mb-2 text-sm font-semibold tracking-wide text-gray-600 uppercase">
 					Das graue Mittelfeld
 				</h2>
 				<div class="space-y-1.5">
 					{#each data.pieces.slice(HIGHLIGHT_COUNT, -HIGHLIGHT_COUNT) as [piece, score]}
-						<div
-							class="flex flex-col gap-1 rounded p-2 sm:flex-row sm:items-center sm:gap-4"
-						>
+						<div class="flex flex-col gap-1 rounded p-2 sm:flex-row sm:items-center sm:gap-4">
 							<!-- Piece name -->
 							<div class="flex-shrink-0 text-sm sm:w-2/5 sm:text-base">
 								{piece}
@@ -106,14 +104,12 @@
 
 		{#if data.pieces.length >= HIGHLIGHT_COUNT}
 			<div>
-				<h2 class="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-600">
+				<h2 class="mb-2 text-sm font-semibold tracking-wide text-gray-600 uppercase">
 					Die unpopulärsten {HIGHLIGHT_COUNT} Stücke
 				</h2>
-				<div class="space-y-1.5 rounded-lg bg-red-50 p-3">
+				<div class="space-y-1.5 rounded-lg bg-red-50 p-3 dark:bg-inherit">
 					{#each data.pieces.slice(-HIGHLIGHT_COUNT) as [piece, score]}
-						<div
-							class="flex flex-col gap-1 rounded p-2 sm:flex-row sm:items-center sm:gap-4"
-						>
+						<div class="flex flex-col gap-1 rounded p-2 sm:flex-row sm:items-center sm:gap-4">
 							<!-- Piece name -->
 							<div class="flex-shrink-0 text-sm sm:w-2/5 sm:text-base">
 								{piece}
@@ -122,10 +118,7 @@
 							<!-- Bar visualization -->
 							<div class="relative h-6 flex-1 overflow-hidden rounded bg-white">
 								{#if score !== 0}
-									<div
-										class="h-full rounded bg-red-600"
-										style="width: {getBarWidth(score)}%"
-									></div>
+									<div class="h-full rounded bg-red-600" style="width: {getBarWidth(score)}%"></div>
 								{/if}
 							</div>
 
