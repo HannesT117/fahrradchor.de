@@ -10,10 +10,9 @@
 	}
 	const { data, form }: Props = $props();
 
-	// Vote value constants
-	const VOTE_YES = 1;
-	const VOTE_NEUTRAL = 0;
-	const VOTE_NO = -1;
+	const MAX_VOTE_VALUE = 10;
+	const DEFAULT_RESISTANCE = 5;
+	const RESISTANCE_LEVELS = Array.from({ length: MAX_VOTE_VALUE + 1 }, (_, i) => i);
 
 	let isSubmitting = $state(false);
 	const currentYear = new Date().getFullYear();
@@ -61,7 +60,7 @@
 				type="text"
 				id="name"
 				name="name"
-				value={form && 'values' in form ? form.values?.name ?? '' : ''}
+				value={form && 'values' in form ? (form.values?.name ?? '') : ''}
 				class="focus:border-cpc-500 focus:ring-cpc-500 w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-1 focus:outline-none"
 				required
 			/>
@@ -74,15 +73,38 @@
 				<fieldset>
 					<legend class="mb-2 font-medium">{piece}</legend>
 					<div class="flex">
-						<label class="flex-1 cursor-pointer rounded-l-md border border-gray-300 px-3 py-2.5 text-center transition-colors has-[:checked]:border-green-500 has-[:checked]:bg-green-100 has-[:checked]:text-green-700 has-[:focus]:z-10 has-[:focus]:ring-2 has-[:focus]:ring-green-500 sm:px-4 sm:py-3">
-							<input type="radio" name={piece} value={VOTE_YES} checked={savedVote === VOTE_YES} class="sr-only" /> Singen
-						</label>
-						<label class="-ml-px flex-1 cursor-pointer border border-gray-300 px-3 py-2.5 text-center transition-colors has-[:checked]:border-gray-400 has-[:checked]:bg-gray-100 has-[:focus]:z-10 has-[:focus]:ring-2 has-[:focus]:ring-gray-400 sm:px-4 sm:py-3">
-							<input type="radio" name={piece} value={VOTE_NEUTRAL} checked={savedVote === VOTE_NEUTRAL} class="sr-only" /> Neutral
-						</label>
-						<label class="-ml-px flex-1 cursor-pointer rounded-r-md border border-gray-300 px-3 py-2.5 text-center transition-colors has-[:checked]:border-red-500 has-[:checked]:bg-red-100 has-[:checked]:text-red-700 has-[:focus]:z-10 has-[:focus]:ring-2 has-[:focus]:ring-red-500 sm:px-4 sm:py-3">
-							<input type="radio" name={piece} value={VOTE_NO} checked={savedVote === VOTE_NO} class="sr-only" /> Nicht singen
-						</label>
+						{#each RESISTANCE_LEVELS as n}
+							<label
+								class="
+									flex-1 cursor-pointer border border-gray-300 py-2.5 text-center text-sm transition-colors has-[:focus]:z-10
+									{n === 0 ? 'rounded-l-md' : '-ml-px'}
+									{n === MAX_VOTE_VALUE ? 'rounded-r-md' : ''}
+									{n <= 3
+									? 'has-[:checked]:border-green-500 has-[:checked]:bg-green-100 has-[:checked]:text-green-700 has-[:focus]:ring-2 has-[:focus]:ring-green-500'
+									: ''}
+									{n >= 4 && n <= 6
+									? 'has-[:checked]:border-gray-400 has-[:checked]:bg-gray-100 has-[:checked]:text-gray-700 has-[:focus]:ring-2 has-[:focus]:ring-gray-400'
+									: ''}
+									{n >= 7
+									? 'has-[:checked]:border-red-500 has-[:checked]:bg-red-100 has-[:checked]:text-red-700 has-[:focus]:ring-2 has-[:focus]:ring-red-500'
+									: ''}
+								"
+							>
+								<input
+									type="radio"
+									name={piece}
+									value={n}
+									checked={savedVote === n || (savedVote === undefined && n === DEFAULT_RESISTANCE)}
+									class="sr-only"
+								/>
+								{n}
+							</label>
+						{/each}
+					</div>
+					<div class="mt-1 flex justify-between text-xs text-gray-500">
+						<span>Kein Widerstand</span>
+						<span>Neutral</span>
+						<span>Absolutes Veto</span>
 					</div>
 				</fieldset>
 			{/each}
@@ -91,7 +113,7 @@
 		<!-- Submit Button -->
 		<button
 			type="submit"
-			class="bg-cpc-500 cursor-pointer hover:bg-cpc-700 w-full rounded-lg px-6 py-3 text-white transition-colors disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-200 sm:mx-auto sm:w-auto sm:min-w-64"
+			class="bg-cpc-500 hover:bg-cpc-700 w-full cursor-pointer rounded-lg px-6 py-3 text-white transition-colors disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-200 sm:mx-auto sm:w-auto sm:min-w-64"
 			disabled={isSubmitting}
 		>
 			{isSubmitting ? 'Wird gesendet...' : 'Abschicken'}

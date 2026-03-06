@@ -3,7 +3,8 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 // Mock the blob module
 vi.mock('./blob', () => ({
 	getVotingResults: vi.fn(),
-	getSonglist: vi.fn()
+	getSonglist: vi.fn(),
+	RESULTS_FILENAME: 'results.json'
 }));
 
 // Mock @vercel/blob
@@ -56,7 +57,7 @@ describe('submitVote', () => {
 	});
 
 	it('should reject empty name', async () => {
-		const result = await submitVote('', { 'Song A': 1 });
+		const result = await submitVote('', { 'Song A': 5 });
 
 		expect(result.success).toBe(false);
 		if (!result.success) {
@@ -65,7 +66,7 @@ describe('submitVote', () => {
 	});
 
 	it('should reject whitespace-only name', async () => {
-		const result = await submitVote('   ', { 'Song A': 1 });
+		const result = await submitVote('   ', { 'Song A': 5 });
 
 		expect(result.success).toBe(false);
 		if (!result.success) {
@@ -79,7 +80,7 @@ describe('submitVote', () => {
 			people: ['Alice', 'Bob']
 		});
 
-		const result = await submitVote('Alice', { 'Song A': 1 });
+		const result = await submitVote('Alice', { 'Song A': 5 });
 
 		expect(result.success).toBe(false);
 		if (!result.success) {
@@ -93,17 +94,18 @@ describe('submitVote', () => {
 			people: ['Alice']
 		});
 
-		const result = await submitVote('Bob', { 'Song A': 1, 'Song B': -1 });
+		// Bob votes: Song A = 3 (low resistance), Song B = 7 (higher resistance)
+		const result = await submitVote('Bob', { 'Song A': 3, 'Song B': 7 });
 
 		expect(result.success).toBe(true);
 		expect(mockPut).toHaveBeenCalledWith(
 			'results.json',
-			expect.stringContaining('"Song A":6'),
+			expect.stringContaining('"Song A":8'),
 			expect.any(Object)
 		);
 	});
 
-	it('should handle vote value of 0 (neutral)', async () => {
+	it('should handle vote value of 0 (kein Widerstand)', async () => {
 		mockGetVotingResults.mockResolvedValue({
 			pieces: { 'Song A': 5 },
 			people: []
@@ -119,18 +121,18 @@ describe('submitVote', () => {
 		);
 	});
 
-	it('should handle negative votes correctly', async () => {
+	it('should handle vote value of 10 (absolutes Veto)', async () => {
 		mockGetVotingResults.mockResolvedValue({
 			pieces: { 'Song A': 5 },
 			people: []
 		});
 
-		const result = await submitVote('Dave', { 'Song A': -1 });
+		const result = await submitVote('Dave', { 'Song A': 10 });
 
 		expect(result.success).toBe(true);
 		expect(mockPut).toHaveBeenCalledWith(
 			'results.json',
-			expect.stringContaining('"Song A":4'),
+			expect.stringContaining('"Song A":15'),
 			expect.any(Object)
 		);
 	});
@@ -141,12 +143,12 @@ describe('submitVote', () => {
 			people: []
 		});
 
-		const result = await submitVote('Eve', { 'Song B': 1 });
+		const result = await submitVote('Eve', { 'Song B': 5 });
 
 		expect(result.success).toBe(true);
 		expect(mockPut).toHaveBeenCalledWith(
 			'results.json',
-			expect.stringContaining('"Song B":1'),
+			expect.stringContaining('"Song B":5'),
 			expect.any(Object)
 		);
 	});
@@ -187,18 +189,22 @@ describe('getResults', () => {
 		vi.clearAllMocks();
 	});
 
-	it('should return sorted results by vote count descending', async () => {
+	it('should return results as resistance % sorted ascending (lowest resistance first)', async () => {
+		// 2 participants
+		// Song A: sum=10, resistance = 10*10/2 = 50%
+		// Song B: sum=4,  resistance = 4*10/2  = 20%
+		// Song C: sum=16, resistance = 16*10/2 = 80%
 		mockGetVotingResults.mockResolvedValue({
-			pieces: { 'Song A': 5, 'Song B': 10, 'Song C': 3 },
+			pieces: { 'Song A': 10, 'Song B': 4, 'Song C': 16 },
 			people: ['Alice', 'Bob']
 		});
 
 		const results = await getResults();
 
 		expect(results.pieces).toEqual([
-			['Song B', 10],
-			['Song A', 5],
-			['Song C', 3]
+			['Song B', 20],
+			['Song A', 50],
+			['Song C', 80]
 		]);
 		expect(results.participantCount).toBe(2);
 	});
@@ -215,18 +221,16 @@ describe('getResults', () => {
 		expect(results.participantCount).toBe(0);
 	});
 
-	it('should handle negative vote totals', async () => {
+	it('should return 0% resistance when no participants', async () => {
 		mockGetVotingResults.mockResolvedValue({
-			pieces: { 'Song A': -5, 'Song B': 3 },
-			people: ['Alice']
+			pieces: { 'Song A': 0 },
+			people: []
 		});
 
 		const results = await getResults();
 
-		expect(results.pieces).toEqual([
-			['Song B', 3],
-			['Song A', -5]
-		]);
+		expect(results.pieces).toEqual([['Song A', 0]]);
+		expect(results.participantCount).toBe(0);
 	});
 });
 

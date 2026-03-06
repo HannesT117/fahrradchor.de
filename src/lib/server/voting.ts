@@ -14,7 +14,7 @@ export const getAvailableSongs = async (): Promise<string[]> => {
 /**
  * Submit a vote for a user
  * @param name - The name of the voter
- * @param votes - Record of piece names to vote values (1, 0, -1)
+ * @param votes - Record of piece names to resistance values (0–10)
  * @returns Success status or error message
  */
 export const submitVote = async (
@@ -51,20 +51,26 @@ export const submitVote = async (
 	}
 };
 
+const MAX_VOTE_VALUE = 10;
+
 /**
- * Get current voting results
+ * Get current voting results as resistance percentages, sorted ascending (lowest resistance first)
  */
 export const getResults = async (): Promise<{
 	pieces: [string, number][];
 	participantCount: number;
 }> => {
 	const { pieces, people } = await getVotingResults();
-	const sorted = Object.entries(pieces).sort(([, a], [, b]) => b - a);
+	const participantCount = people.length;
+	const sorted = Object.entries(pieces)
+		.map(([name, sum]): [string, number] => [
+			name,
+			// resistance % = (average vote / max vote) × 100
+			participantCount > 0 ? (sum / participantCount / MAX_VOTE_VALUE) * 100 : 0
+		])
+		.sort(([, a], [, b]) => a - b);
 
-	return {
-		pieces: sorted,
-		participantCount: people.length
-	};
+	return { pieces: sorted, participantCount };
 };
 
 // Private helper functions
