@@ -16,6 +16,7 @@
 	const VOTE_NO = -1;
 
 	let isSubmitting = $state(false);
+	const currentYear = new Date().getFullYear();
 
 	// Helper to get saved vote value from form error response
 	function getSavedVote(piece: string): number | undefined {
@@ -27,7 +28,7 @@
 </script>
 
 <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:px-8">
-	<CpcH2 tag="h1">Liederauswahl 2025</CpcH2>
+	<CpcH2 tag="h1">Liederauswahl {currentYear}</CpcH2>
 
 	<form
 		method="POST"
