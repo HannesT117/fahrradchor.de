@@ -13,6 +13,25 @@
 	<title>Konzerte des Collegium Pedale Cantorum</title>
 </svelte:head>
 
+{#snippet konzertItem(konzert: (typeof data.futureKonzerte)[number], showLink: boolean)}
+	<li class="border-solid border-gray-200 py-4 md:px-4 [&:not(:last-child)]:border-b-1">
+		<div class="grid grid-cols-1 gap-2 md:grid-cols-[1fr_1fr] md:gap-4">
+			<div class="flex flex-row gap-1 md:flex-col md:gap-0">
+				<span class="font-light text-gray-500">{konzert.date}</span>
+				<span class="font-light text-gray-500">{konzert.time}</span>
+			</div>
+			<div>
+				<div class="font-semibold">{konzert.venue}</div>
+				<div class="text-gray-600 dark:text-gray-400">{konzert.street}</div>
+				<div class="text-gray-600 dark:text-gray-400">{konzert.plz} {konzert.place}</div>
+				{#if showLink && konzert.link}
+					<CpcLink href={konzert.link}>Link zur Veranstaltung</CpcLink>
+				{/if}
+			</div>
+		</div>
+	</li>
+{/snippet}
+
 <CpcH2 tag="h1">Konzerte</CpcH2>
 <p class="p-6 md:p-0 md:mb-8 flex w-full flex-col justify-center gap-8 md:w-2/3 lg:w-1/2">
 	Musik machen, Radfahren und Gutes tun: Das ist Herzenssache des Chores seit seiner Gründung im
@@ -29,22 +48,7 @@
 			<p class="text-sm text-gray-500">Eintritt frei - Spenden für <CpcLink href="https://www.german-doctors.de/en/" target="_blank">German Doctors</CpcLink> erbeten</p>
 			<ul>
 				{#each data.futureKonzerte as konzert}
-					<li class="border-solid border-gray-200 py-4 md:px-4 [&:not(:last-child)]:border-b-1">
-						<div class="grid grid-cols-1 gap-2 md:grid-cols-[1fr_1fr] md:gap-4">
-							<div class="flex flex-row gap-1 md:flex-col md:gap-0">
-								<span class="font-light text-gray-500">{konzert.date}</span>
-								<span class="font-light text-gray-500">{konzert.time}</span>
-							</div>
-							<div>
-								<div class="font-semibold">{konzert.venue}</div>
-								<div class="text-gray-600 dark:text-gray-400">{konzert.street}</div>
-								<div class="text-gray-600 dark:text-gray-400">{konzert.plz} {konzert.place}</div>
-								{#if konzert.link}
-								    <CpcLink href={konzert.link}>Link zur Veranstaltung</CpcLink>
-								{/if}
-							</div>
-						</div>
-					</li>
+					{@render konzertItem(konzert, true)}
 				{/each}
 			</ul>
 		</div>
@@ -54,19 +58,7 @@
 			<h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Vergangene Konzerte</h2>
 			<ul>
 				{#each data.pastKonzerte as konzert}
-					<li class="border-solid border-gray-200 py-4 md:px-4 [&:not(:last-child)]:border-b-1">
-						<div class="grid grid-cols-1 gap-2 md:grid-cols-[1fr_1fr] md:gap-4">
-							<div class="flex flex-row gap-1 md:flex-col md:gap-0">
-								<span class="font-light text-gray-500">{konzert.date}</span>
-								<span class="font-light text-gray-500">{konzert.time}</span>
-							</div>
-							<div>
-								<div class="font-semibold">{konzert.venue}</div>
-								<div class="text-gray-600 dark:text-gray-400">{konzert.street}</div>
-								<div class="text-gray-600 dark:text-gray-400">{konzert.plz} {konzert.place}</div>
-							</div>
-						</div>
-					</li>
+					{@render konzertItem(konzert, false)}
 				{/each}
 			</ul>
 		</div>
