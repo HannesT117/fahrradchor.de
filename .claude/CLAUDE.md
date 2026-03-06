@@ -126,3 +126,7 @@ Flat config format using:
 - Svelte plugin
 - Prettier integration
 - Includes `.gitignore` patterns
+
+## Code Style Rules
+
+- **No empty `alt` attributes**: Do not add `alt=""` to images. Either provide a meaningful alt text or omit the attribute entirely.

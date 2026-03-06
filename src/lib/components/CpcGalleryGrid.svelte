@@ -16,7 +16,7 @@
 <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
 	{#each imageGroups as imageGroup}
 		<div class="grid gap-4">
-			{#each imageGroup as image, index}
+			{#each imageGroup as image}
 				<enhanced:img
 					class="h-auto rounded-lg object-cover"
 					src={image}
