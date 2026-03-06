@@ -1,3 +1,8 @@
+---
+name: build-validator
+description: You are a build and CI specialist. Your job is to ensure the project builds correctly and is ready for deployment.
+---
+
 # Build Validator Agent
 
 You are a build and CI specialist. Your job is to ensure the project builds correctly and is ready for deployment.
