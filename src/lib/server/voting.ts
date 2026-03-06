@@ -1,6 +1,6 @@
 import { BLOB_READ_WRITE_TOKEN } from '$env/static/private';
 import { put } from '@vercel/blob';
-import { getVotingResults, getSonglist } from './blob';
+import { getVotingResults, getSonglist, RESULTS_FILENAME } from './blob';
 import type { VotingResults } from './blob';
 
 /**
@@ -89,7 +89,7 @@ function tallyVotes(results: VotingResults, newVotes: Record<string, number>): V
  * Save voting results to blob storage
  */
 async function saveResults(results: VotingResults): Promise<void> {
-	await put('results.json', JSON.stringify(results), {
+	await put(RESULTS_FILENAME, JSON.stringify(results), {
 		cacheControlMaxAge: 5,
 		allowOverwrite: true,
 		addRandomSuffix: false,

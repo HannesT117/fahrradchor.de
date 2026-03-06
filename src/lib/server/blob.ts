@@ -1,6 +1,9 @@
 import { BLOB_READ_WRITE_TOKEN } from '$env/static/private';
 import { list } from '@vercel/blob';
 
+export const SONGLIST_FILENAME = 'songlist.json';
+export const RESULTS_FILENAME = 'results.json';
+
 // Type definitions for blob storage data structures
 export interface Songlist {
 	pieces: string[];
@@ -23,9 +26,9 @@ export const download = async (name: string) => {
 
 // Typed wrapper functions
 export const getSonglist = async (): Promise<Songlist> => {
-	return await download('songlist.json');
+	return await download(SONGLIST_FILENAME);
 };
 
 export const getVotingResults = async (): Promise<VotingResults> => {
-	return await download('results.json');
+	return await download(RESULTS_FILENAME);
 };
