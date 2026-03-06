@@ -4,7 +4,6 @@
 	import CpcAudio from '$lib/components/CpcAudio.svelte';
 	import CpcSection from '$lib/components/CpcSection.svelte';
 	import CpcInfoBox from '$lib/components/CpcInfoBox.svelte';
-	import CpcImageTextBlock from '$lib/components/CpcImageTextBlock.svelte';
 	import CpcGalleryGrid from '$lib/components/CpcGalleryGrid.svelte';
 	import BgImage from '$lib/img/cpc_konzert_small.webp';
 	import FriedemannImage from '$lib/img/friedemann.webp?enhanced';
@@ -62,7 +61,7 @@
 	</div>
 
 	<CpcSection title="Der Dirigent">
-		<CpcImageTextBlock imagePosition="left">
+		<div class="relative">
 			<enhanced:img
 				class="rounded-sm object-cover md:h-80 md:w-1/2"
 				src={FriedemannImage}
@@ -76,7 +75,7 @@
 					</CpcParagraph>
 				</div>
 			</div>
-		</CpcImageTextBlock>
+		</div>
 	</CpcSection>
 
 	<CpcSection title="Die Konzertreise">
