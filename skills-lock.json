@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "debugger": {
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "sourceType": "github",
+      "computedHash": "609b0b6d79fe21bcb5eb8a01b38f5571b8ae05be826936a312bc04d9c5400193"
+    },
+    "decision-helper": {
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "sourceType": "github",
+      "computedHash": "ecc452103f3cf850b4d7c9055fc1fe02449fd124ea61f48bd0a1cf83c8538bc0"
+    },
+    "extract-errors": {
+      "source": "facebook/react",
+      "sourceType": "github",
+      "computedHash": "b088123d854e6e3c57ab74746bce30c9231daec33dc73782ac57d7b3121519bc"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "computedHash": "6412eb4eb3b91595ebab937f0c69501240e7ba761b3d82510b5cf506ec5c7adc"
+    },
+    "fix": {
+      "source": "facebook/react",
+      "sourceType": "github",
+      "computedHash": "d68147149e12e8358926a58ef51b25d88a1e889233284c5ad849e1ee2b521206"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+    },
+    "fullstack-developer": {
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "sourceType": "github",
+      "computedHash": "d824d75875b289753740c12ba33c005a40f0d996f12d3424cabf1ef9ad4cd1a3"
+    },
+    "strategy-advisor": {
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "sourceType": "github",
+      "computedHash": "b89ff6935fb1a7607bae1fba36dfe84963c633750048e3db0a085c4f5c3ca79c"
+    },
+    "technical-writer": {
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "sourceType": "github",
+      "computedHash": "e1ccd2334efd9b2137844568db30b0a1c6679404b474c216476c59e22ad08c28"
+    },
+    "ux-designer": {
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "sourceType": "github",
+      "computedHash": "1178ae59d9dd5ca71122674d85bd78d746b3b95f76c58c65cb0fd48dd54bea45"
+    },
+    "visualization-expert": {
+      "source": "Shubhamsaboo/awesome-llm-apps",
+      "sourceType": "github",
+      "computedHash": "cd8f8bc48c6790cb3b25a13e7a7b05dccd6fd5213577ca59d3c232282d1e151a"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "a6a44d5498f7e8f68289902f3dedfc6f38ae0cee1e96527c80724cf27f727c2a"
+    }
+  }
+}
