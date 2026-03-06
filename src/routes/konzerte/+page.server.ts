@@ -13,34 +13,22 @@ interface KonzertMetadata {
 }
 
 const files = import.meta.glob<{ metadata: KonzertMetadata }>('$lib/konzerte/*.{md,svx,svelte.md}');
-const mapped = Object.entries(files).map(async ([path, res]) => {
-	const module = await res();
-
-	return {
-		module,
-		path
-	};
-});
-const konzerte = (await Array.fromAsync(mapped))
-	.map((k) => {
-		const { metadata } = k.module;
-		const { date, time } = createDateTimeStrings(metadata.start, metadata.end);
-
-		return {
-			...metadata,
-			date,
-			time
-		};
-	})
-	.sort((a, b) => new Date(a.end).getTime() - new Date(b.end).getTime());
-
-const present = new Date();
-const past = konzerte.filter((konzert) => new Date(konzert.end) < present);
-const future = konzerte.filter((konzert) => new Date(konzert.end) > present);
 
 export const load: PageServerLoad = async () => {
+	const mapped = Object.entries(files).map(async ([, res]) => {
+		const { metadata } = await res();
+		const { date, time } = createDateTimeStrings(metadata.start, metadata.end);
+		return { ...metadata, date, time };
+	});
+
+	const konzerte = (await Promise.all(mapped)).sort(
+		(a, b) => new Date(a.end).getTime() - new Date(b.end).getTime()
+	);
+
+	const present = new Date();
+
 	return {
-		pastKonzerte: past,
-		futureKonzerte: future
+		pastKonzerte: konzerte.filter((k) => new Date(k.end) < present),
+		futureKonzerte: konzerte.filter((k) => new Date(k.end) > present)
 	};
 };
