@@ -10,6 +10,7 @@
 	import SebImage from '$lib/img/seb.webp?enhanced';
 	import TentsImage from '$lib/img/tents.webp?enhanced';
 	import CpcLink from '$lib/components/CpcLink.svelte';
+	import CpcButtonLink from '$lib/components/CpcButtonLink.svelte';
 
 	const imageFiles = import.meta.glob('$lib/img/gallery/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}', {
 		eager: true,
@@ -30,7 +31,10 @@
 </svelte:head>
 
 <div class="bg-choir -mt-20 mb-8 h-[88vh] w-full bg-cover bg-center">
-	<h1 class="hidden">Collegium Pedale Cantorum</h1>
+	<div class="flex h-full w-full flex-col justify-end p-8 lg:items-center">
+		<h1 class="hidden">Collegium Pedale Cantorum</h1>
+		<CpcButtonLink href="/konzerte/">Zu den Konzerten 2026</CpcButtonLink>
+	</div>
 </div>
 
 <div class="flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:px-8">

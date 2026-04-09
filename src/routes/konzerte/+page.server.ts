@@ -21,14 +21,16 @@ export const load: PageServerLoad = async () => {
 		return { ...metadata, date, time };
 	});
 
-	const konzerte = (await Promise.all(mapped)).sort(
-		(a, b) => new Date(a.end).getTime() - new Date(b.end).getTime()
-	);
+	const konzerte = await Promise.all(mapped);
 
 	const present = new Date();
 
 	return {
-		pastKonzerte: konzerte.filter((k) => new Date(k.end) < present),
-		futureKonzerte: konzerte.filter((k) => new Date(k.end) > present)
+		pastKonzerte: konzerte
+			.filter((k) => new Date(k.end) < present)
+			.sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime()),
+		futureKonzerte: konzerte
+			.filter((k) => new Date(k.end) > present)
+			.sort((a, b) => new Date(a.end).getTime() - new Date(b.end).getTime())
 	};
 };
