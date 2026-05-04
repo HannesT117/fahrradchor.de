@@ -4,7 +4,7 @@ start: 2026-08-05T19:00
 end: 2026-08-05T20:15
 venue: Kirchenruine Dambeck
 street:
-plz:
+plz: "17209"
 place: Dambeck
 layout: konzert
 ---

@@ -4,7 +4,7 @@ start: 2026-08-08T19:30
 end: 2026-08-08T20:45
 venue: Ev. Dorfkirche Schillersdorf
 street:
-plz:
+plz: "17252"
 place: Schillersdorf
 layout: konzert
 ---

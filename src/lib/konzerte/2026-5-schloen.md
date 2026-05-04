@@ -3,7 +3,7 @@ title: 5. Konzert der Sommertour
 start: 2026-08-07T19:30
 end: 2026-08-07T20:45
 venue: Ev. Dorfkirche Schloen
-street:
+street: Dorfstraße 19
 plz: "17192"
 place: Schloen
 layout: konzert

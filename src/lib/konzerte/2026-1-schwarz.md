@@ -3,7 +3,7 @@ title: 1. Konzert der Sommertour
 start: 2026-08-03T19:30
 end: 2026-08-03T20:45
 venue: Ev. Dorfkirche Schwarz
-street:
+street: Dorfstraße 5
 plz: "17252"
 place: Schwarz
 layout: konzert

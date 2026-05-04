@@ -3,8 +3,8 @@ title: 2. Konzert der Sommertour
 start: 2026-08-04T19:30
 end: 2026-08-04T20:45
 venue: Ev. Dorfkirche Vipperow
-street:
-plz:
+street: Dorfstraße 26-28
+plz: "17209"
 place: Vipperow
 layout: konzert
 ---
