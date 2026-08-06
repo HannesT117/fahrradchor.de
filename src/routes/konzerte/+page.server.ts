@@ -1,3 +1,4 @@
+import type { Config } from '@sveltejs/adapter-vercel';
 import { createDateTimeStrings } from '$lib/time';
 import type { PageServerLoad } from './$types';
 
@@ -13,6 +14,16 @@ interface KonzertMetadata {
 }
 
 const files = import.meta.glob<{ metadata: KonzertMetadata }>('$lib/konzerte/*.{md,svx,svelte.md}');
+
+// Keep the past/future split current without redeploying: ISR refreshes daily.
+// Mutually exclusive with the root layout's prerender=true for this route.
+export const prerender = false;
+
+export const config: Config = {
+	isr: {
+		expiration: 60 * 60 * 24
+	}
+};
 
 export const load: PageServerLoad = async () => {
 	const mapped = Object.entries(files).map(async ([, res]) => {

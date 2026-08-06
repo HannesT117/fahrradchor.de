@@ -20,7 +20,8 @@
 	// Helper to get saved vote value from form error response
 	function getSavedVote(piece: string): number | undefined {
 		if (form && 'values' in form && form.values?.votes) {
-			return form.values.votes[piece];
+			const votes = form.values.votes as Record<string, number>;
+			return votes[piece];
 		}
 		return undefined;
 	}

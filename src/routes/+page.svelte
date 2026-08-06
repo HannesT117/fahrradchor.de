@@ -16,9 +16,10 @@
 		eager: true,
 		query: {
 			enhanced: true
-		}
+		},
+		import: 'default'
 	});
-	const imageModules = Object.entries(imageFiles).map(([, module]) => module.default as any);
+	const imageModules = Object.values(imageFiles);
 </script>
 
 <svelte:head>
